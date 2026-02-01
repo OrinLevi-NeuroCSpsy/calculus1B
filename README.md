@@ -2,9 +2,9 @@
 
 סיכום קורס Calculus 1B (למדמ״ח) באוניברסיטת תל אביב, לפי אביב צנזור.
 
-[![Deploy to GitHub Pages](https://github.com/orinlevi/calculus_1B/actions/workflows/deploy.yml/badge.svg)](https://github.com/orinlevi/calculus_1B/actions/workflows/deploy.yml)
+[![Deploy to GitHub Pages](https://github.com/orinlevi/calculus1B/actions/workflows/deploy.yml/badge.svg)](https://github.com/orinlevi/calculus1B/actions/workflows/deploy.yml)
 
-**[📖 צפה באתר](https://orinlevi.github.io/calculus_1B/)**
+**[📖 צפה באתר](https://orinlevi.github.io/calculus1B/)**
 
 ## מבנה הפרויקט
 

@@ -1,10 +1,10 @@
 site_name: חשבון אינפיניטסימלי 1ב
 site_description: סיכום מקיף לקורס חדו"א 1ב, אוניברסיטת תל אביב
 docs_dir: docs
-site_url: https://orinlevi.github.io/calculus_1B/
+site_url: https://orinlevi.github.io/calculus1B/
 
-repo_name: calculus_1B
-repo_url: https://github.com/orinlevi/calculus_1B
+repo_name: calculus1B
+repo_url: https://github.com/orinlevi/calculus1B
 
 extra_css:
   - stylesheets/extra.css
