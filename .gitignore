@@ -1,0 +1,66 @@
+.DS_Store
+
+# LaTeX auxiliary files
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.synctex(busy)
+*.fdb_latexmk
+*.fls
+*.bbl
+*.blg
+*.xdv
+*.lof
+*.lot
+*.run.xml
+*.bcf
+*.sta
+
+# Index / glossary / acronym
+*.idx
+*.ilg
+*.ind
+*.glo
+*.glg
+*.gls
+*.glsdefs
+*.acn
+*.acr
+*.alg
+*.ist
+
+# Beamer
+*.nav
+*.snm
+*.vrb
+
+# latexindent
+__latexindent_temp.*
+
+# MkDocs build
+site/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Editor backup files
+*.bak
+*~
+*.swp
+*.swo
+
+# IDE files
+.vscode/
+.idea/
+*.code-workspace
+
+# TeXShop
+.texshop/
+
+# PDF files (generated, not source)
+main.pdf

@@ -1,0 +1,28 @@
+% ===============================
+% Macros — חדו״א 1ב
+% ===============================
+
+% כותרות דו-לשוניות (עברית + English) עם PDF bookmarks תקינים
+\newcommand{\hebeng}[2]{#1 \texorpdfstring{\LRE{(#2)}}{(#2)}}
+
+% קבוצות מספרים
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+% סימונים בסיסיים
+\newcommand{\eps}{\varepsilon}
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+\newcommand{\set}[1]{\left\{ #1 \right\}}
+\newcommand{\paren}[1]{\left( #1 \right)}
+
+% סביבות (חדו״א – הגדרות ומשפטים)
+\theoremstyle{definition}
+\newtheorem{definition}{הגדרה}[section]
+\newtheorem{example}{דוגמה}[section]
+
+\theoremstyle{plain}
+\newtheorem{theorem}{משפט}[section]
+\newtheorem{lemma}{למה}[section]

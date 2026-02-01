@@ -1,0 +1,71 @@
+site_name: חשבון אינפיניטסימלי 1ב
+site_description: סיכום מקיף לקורס חדו"א 1ב, אוניברסיטת תל אביב
+docs_dir: docs
+site_url: https://orinlevi.github.io/calculus_1B/
+
+repo_name: calculus_1B
+repo_url: https://github.com/orinlevi/calculus_1B
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/orinlevi/Calculus1B
+
+theme:
+  logo: assets/logo.png
+  favicon: assets/logo.png
+  name: material
+  custom_dir: docs/overrides
+  language: he
+  direction: rtl
+  palette:
+    - scheme: slate
+      media: "(min-width: 0)"
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/brightness-4
+        name: מצב יום
+    - scheme: default
+      media: "(prefers-color-scheme: light)"
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/brightness-7
+        name: מצב לילה
+  features:
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - search.highlight
+    - content.code.copy
+
+plugins:
+  - search:
+      lang: he
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+  - tables
+  - toc:
+      permalink: true
+  - attr_list
+  - md_in_html
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+nav:
+  - בית: index.md
+  - יחידות:
+    - יחידה 1 - אינטגרלים: units/unit1.md

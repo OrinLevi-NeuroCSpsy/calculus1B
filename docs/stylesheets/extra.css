@@ -1,0 +1,253 @@
+/* === עיצוב מקצועי - חשבון אינפיניטסימלי 1ב === */
+
+/* צבעים */
+:root {
+  --pastel-teal: #80cbc4;
+  --pastel-cyan: #80deea;
+  --pastel-green: #a5d6a7;
+  --pastel-blue: #90caf9;
+  --pastel-amber: #ffe082;
+  --pastel-orange: #ffab91;
+  --text-muted: #a6adc8;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.1);
+}
+
+/* === כותרת עליונה (Header) === */
+
+.md-header__button.md-logo {
+  padding: 0.1rem !important;
+}
+.md-header__title::after {
+  content: " · by Orin Levi";
+  font-size: 0.7em;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-inline-start: 8px;
+}
+
+/* === כרטיסיות צבעוניות === */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.card {
+  padding: 20px;
+  border-radius: 12px;
+  border: 2px solid;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+  margin-top: 0 !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-teal {
+  background: linear-gradient(135deg, rgba(128, 203, 196, 0.15), rgba(128, 203, 196, 0.05));
+  border-color: var(--pastel-teal);
+}
+
+.card-cyan {
+  background: linear-gradient(135deg, rgba(128, 222, 234, 0.15), rgba(128, 222, 234, 0.05));
+  border-color: var(--pastel-cyan);
+}
+
+.card-green {
+  background: linear-gradient(135deg, rgba(165, 214, 167, 0.15), rgba(165, 214, 167, 0.05));
+  border-color: var(--pastel-green);
+}
+
+.card-blue {
+  background: linear-gradient(135deg, rgba(144, 202, 249, 0.15), rgba(144, 202, 249, 0.05));
+  border-color: var(--pastel-blue);
+}
+
+.card-amber {
+  background: linear-gradient(135deg, rgba(255, 224, 130, 0.15), rgba(255, 224, 130, 0.05));
+  border-color: var(--pastel-amber);
+}
+
+.card-orange {
+  background: linear-gradient(135deg, rgba(255, 171, 145, 0.15), rgba(255, 171, 145, 0.05));
+  border-color: var(--pastel-orange);
+}
+
+/* === Hero Banner === */
+
+.hero-banner {
+  text-align: center;
+  padding: 40px 20px;
+  margin-bottom: 32px;
+  border-radius: 16px;
+  background: linear-gradient(135deg,
+    rgba(128, 203, 196, 0.1),
+    rgba(128, 222, 234, 0.1),
+    rgba(144, 202, 249, 0.1));
+  border: 1px solid var(--card-border);
+}
+
+.hero-banner h1 {
+  border-bottom: none !important;
+  margin-bottom: 16px !important;
+}
+
+.hero-subtitle {
+  color: var(--text-muted);
+  font-size: 1.1em;
+}
+
+.hero-author {
+  margin-top: 12px;
+  font-size: 0.9em;
+  color: var(--pastel-teal);
+}
+
+/* === Stats === */
+
+.stats-row {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin: 24px 0;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2em;
+  font-weight: bold;
+  color: var(--pastel-cyan);
+}
+
+.stat-label {
+  font-size: 0.85em;
+  color: var(--text-muted);
+}
+
+/* === שיפורים כלליים === */
+
+.md-typeset table:not([class]) {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.md-typeset table:not([class]) th {
+  background: rgba(128, 203, 196, 0.1);
+}
+
+.md-typeset a:hover {
+  color: var(--pastel-teal) !important;
+}
+
+.md-nav__link:hover {
+  color: var(--pastel-cyan) !important;
+}
+
+/* === Quick Links === */
+
+.quick-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.quick-link {
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  transition: all 0.2s;
+}
+
+.quick-link:hover {
+  background: rgba(128, 203, 196, 0.2);
+  border-color: var(--pastel-teal);
+}
+
+/* === Download Button === */
+
+.download-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, var(--pastel-teal), var(--pastel-cyan));
+  color: #1e1e2e !important;
+  border-radius: 25px;
+  text-decoration: none !important;
+  font-weight: bold;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.download-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(128, 203, 196, 0.4);
+}
+
+/* === Definition/Example/Warning Boxes === */
+
+.definition-box {
+  background: rgba(128, 222, 234, 0.1);
+  border-right: 4px solid var(--pastel-cyan);
+  padding: 16px;
+  margin: 16px 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.example-box {
+  background: rgba(165, 214, 167, 0.1);
+  border-right: 4px solid var(--pastel-green);
+  padding: 16px;
+  margin: 16px 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.warning-box {
+  background: rgba(255, 171, 145, 0.1);
+  border-right: 4px solid var(--pastel-orange);
+  padding: 16px;
+  margin: 16px 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.formula-box {
+  background: rgba(128, 203, 196, 0.1);
+  border: 1px solid var(--pastel-teal);
+  padding: 16px;
+  margin: 16px 0;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* === Theorem/Proof Boxes === */
+
+.theorem-box {
+  background: rgba(144, 202, 249, 0.1);
+  border-right: 4px solid var(--pastel-blue);
+  padding: 16px;
+  margin: 16px 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.proof-box {
+  background: rgba(255, 224, 130, 0.1);
+  border-right: 4px solid var(--pastel-amber);
+  padding: 16px;
+  margin: 16px 0;
+  border-radius: 0 8px 8px 0;
+}
