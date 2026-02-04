@@ -1,0 +1,424 @@
+% פרק 4: טורים
+\chapter{טורים}
+
+\section{הגדרות ותכונות בסיסיות}
+
+\begin{defbox}
+\textbf{הגדרה 4.1 (טור).}
+יהי $(a_n)_{n=1}^{\infty}$ סדרה. \textbf{הטור} $\sum_{n=1}^{\infty} a_n$ הוא הביטוי הפורמלי $a_1 + a_2 + a_3 + \cdots$
+
+\textbf{הסכום החלקי ה־$N$־י} הוא $S_N = \sum_{n=1}^{N} a_n = a_1 + a_2 + \cdots + a_N$.
+\end{defbox}
+
+\begin{defbox}
+\textbf{הגדרה 4.2 (התכנסות טור).}
+הטור $\sum_{n=1}^{\infty} a_n$ \textbf{מתכנס} אם סדרת הסכומים החלקיים $(S_N)$ מתכנסת.
+
+במקרה זה, \textbf{סכום הטור} הוא $\sum_{n=1}^{\infty} a_n = \lim_{N \to \infty} S_N$.
+
+טור שאינו מתכנס נקרא \textbf{מתבדר}.
+\end{defbox}
+
+\begin{exbox}
+\textbf{דוגמה 1 (הטור הגיאומטרי).}
+$\sum_{n=0}^{\infty} q^n = 1 + q + q^2 + \cdots$
+
+\textbf{פתרון:}
+$S_N = \frac{1 - q^{N+1}}{1 - q}$ (עבור $q \neq 1$).
+
+הטור מתכנס אם ורק אם $|q| < 1$, ואז:
+\[
+\boxed{\sum_{n=0}^{\infty} q^n = \frac{1}{1-q} \quad (|q| < 1)}
+\]
+\end{exbox}
+
+\begin{exbox}
+\textbf{דוגמה 2 (הטור ההרמוני).}
+$\sum_{n=1}^{\infty} \frac{1}{n} = 1 + \frac{1}{2} + \frac{1}{3} + \cdots$ \textbf{מתבדר}.
+
+\textbf{הוכחה:}
+\[
+S_{2^k} = 1 + \frac{1}{2} + \left(\frac{1}{3} + \frac{1}{4}\right) + \left(\frac{1}{5} + \cdots + \frac{1}{8}\right) + \cdots > 1 + \frac{1}{2} + \frac{2}{4} + \frac{4}{8} + \cdots = 1 + \frac{k}{2} \to \infty
+\]
+\end{exbox}
+
+\begin{thmbox}
+\textbf{טענה 4.3 (תנאי הכרחי להתכנסות).}
+אם הטור $\sum a_n$ מתכנס אז $\limn a_n = 0$.
+\end{thmbox}
+
+\begin{proofbox}
+\textbf{הוכחה.}
+אם $S = \sum a_n$ מתכנס, אז $S_n \to S$ ו־$S_{n-1} \to S$.
+
+לכן $a_n = S_n - S_{n-1} \to S - S = 0$. $\blacksquare$
+\end{proofbox}
+
+\begin{notebox}
+\textbf{אזהרה!}
+התנאי $a_n \to 0$ הוא \textbf{הכרחי אך לא מספיק}.
+
+דוגמה נגדית: $a_n = \frac{1}{n} \to 0$ אבל $\sum \frac{1}{n}$ מתבדר!
+\end{notebox}
+
+\begin{thmbox}
+\textbf{טענה 4.4 (לינאריות).}
+אם $\sum a_n$ ו־$\sum b_n$ מתכנסים, אז:
+\begin{enumerate}
+    \item $\sum (a_n + b_n) = \sum a_n + \sum b_n$
+    \item $\sum (c \cdot a_n) = c \cdot \sum a_n$ לכל $c \in \R$
+\end{enumerate}
+\end{thmbox}
+
+\section{מבחני התכנסות לטורים אי־שליליים}
+
+\begin{thmbox}
+\textbf{טענה 4.5 (התכנסות טור אי־שלילי).}
+טור $\sum a_n$ עם $a_n \ge 0$ מתכנס אם ורק אם סדרת הסכומים החלקיים חסומה.
+\end{thmbox}
+
+\begin{proofbox}
+\textbf{הוכחה.}
+$(S_N)$ עולה (כי $S_{N+1} = S_N + a_{N+1} \ge S_N$).
+
+סדרה עולה מתכנסת אם ורק אם היא חסומה מלעיל. $\blacksquare$
+\end{proofbox}
+
+\subsection{מבחן ההשוואה}
+
+\begin{thmbox}
+\textbf{משפט 4.6 (מבחן ההשוואה).}
+יהיו $(a_n)$, $(b_n)$ סדרות עם $0 \le a_n \le b_n$ לכל $n$.
+\begin{enumerate}
+    \item אם $\sum b_n$ מתכנס אז $\sum a_n$ מתכנס.
+    \item אם $\sum a_n$ מתבדר אז $\sum b_n$ מתבדר.
+\end{enumerate}
+\end{thmbox}
+
+\begin{proofbox}
+\textbf{הוכחה (סעיף 1).}
+$S_N^{(a)} = \sum_{n=1}^N a_n \le \sum_{n=1}^N b_n = S_N^{(b)} \le \sum_{n=1}^{\infty} b_n$
+
+לכן $(S_N^{(a)})$ חסומה מלעיל, ולכן $\sum a_n$ מתכנס. $\blacksquare$
+\end{proofbox}
+
+\begin{exbox}
+\textbf{דוגמה.} הוכיחו כי $\sum_{n=1}^{\infty} \frac{1}{n^2}$ מתכנס.
+
+\textbf{פתרון:}
+לכל $n \ge 2$: $\frac{1}{n^2} < \frac{1}{n(n-1)} = \frac{1}{n-1} - \frac{1}{n}$ (טור טלסקופי).
+
+$\sum_{n=2}^N \frac{1}{n(n-1)} = 1 - \frac{1}{N} \to 1$.
+
+לפי מבחן ההשוואה, $\sum \frac{1}{n^2}$ מתכנס. $\blacksquare$
+\end{exbox}
+
+\subsection{מבחן ההשוואה הגבולי}
+
+\begin{thmbox}
+\textbf{משפט 4.7 (מבחן ההשוואה הגבולי).}
+יהיו $(a_n)$, $(b_n)$ סדרות חיוביות. אם $\limn \frac{a_n}{b_n} = L$ כאשר $0 < L < \infty$, אז:
+\[
+\sum a_n \text{ מתכנס } \iff \sum b_n \text{ מתכנס}
+\]
+\end{thmbox}
+
+\begin{proofbox}
+\textbf{הוכחה.}
+קיים $N$ כך שלכל $n > N$: $\frac{L}{2} < \frac{a_n}{b_n} < \frac{3L}{2}$.
+
+לכן $\frac{L}{2} b_n < a_n < \frac{3L}{2} b_n$.
+
+לפי מבחן ההשוואה (ולינאריות), $\sum a_n$ ו־$\sum b_n$ מתכנסים או מתבדרים יחד. $\blacksquare$
+\end{proofbox}
+
+\begin{exbox}
+\textbf{דוגמה.} בדקו התכנסות $\sum_{n=1}^{\infty} \frac{n+1}{n^3 + 2n}$.
+
+\textbf{פתרון:}
+נשווה ל־$b_n = \frac{1}{n^2}$ (הטור $\sum \frac{1}{n^2}$ מתכנס).
+
+\[
+\frac{a_n}{b_n} = \frac{(n+1) \cdot n^2}{n^3 + 2n} = \frac{n^3 + n^2}{n^3 + 2n} = \frac{1 + \frac{1}{n}}{1 + \frac{2}{n^2}} \to 1 \in (0, \infty)
+\]
+
+לפי מבחן ההשוואה הגבולי, הטור \textbf{מתכנס}. $\blacksquare$
+\end{exbox}
+
+\subsection{מבחן המנה (דלמבר)}
+
+\begin{thmbox}
+\textbf{משפט 4.8 (מבחן המנה / דלמבר).}
+תהי $(a_n)$ סדרה חיובית. נסמן $L = \limn \frac{a_{n+1}}{a_n}$ (אם קיים).
+\begin{enumerate}
+    \item אם $L < 1$ אז $\sum a_n$ \textbf{מתכנס}.
+    \item אם $L > 1$ אז $\sum a_n$ \textbf{מתבדר}.
+    \item אם $L = 1$ אז \textbf{המבחן לא מכריע}.
+\end{enumerate}
+\end{thmbox}
+
+\begin{proofbox}
+\textbf{הוכחה (מקרה $L < 1$).}
+נבחר $q$ כך ש־$L < q < 1$.
+
+קיים $N$ כך שלכל $n > N$: $\frac{a_{n+1}}{a_n} < q$.
+
+לכן $a_{N+k} < q^k \cdot a_N$ לכל $k \ge 1$.
+
+הטור $\sum_{k=1}^{\infty} q^k \cdot a_N$ מתכנס (טור גיאומטרי עם $|q| < 1$).
+
+לפי מבחן ההשוואה, $\sum a_n$ מתכנס. $\blacksquare$
+\end{proofbox}
+
+\begin{exbox}
+\textbf{דוגמה 1.} בדקו התכנסות $\sum_{n=1}^{\infty} \frac{n!}{n^n}$.
+
+\textbf{פתרון:}
+\[
+\frac{a_{n+1}}{a_n} = \frac{(n+1)!}{(n+1)^{n+1}} \cdot \frac{n^n}{n!} = \frac{n^n}{(n+1)^n} = \left(\frac{n}{n+1}\right)^n = \left(1 - \frac{1}{n+1}\right)^n \to \frac{1}{e} < 1
+\]
+
+לפי מבחן המנה, הטור \textbf{מתכנס}. $\blacksquare$
+\end{exbox}
+
+\begin{exbox}
+\textbf{דוגמה 2.} בדקו התכנסות $\sum_{n=1}^{\infty} \frac{2^n}{n!}$.
+
+\textbf{פתרון:}
+\[
+\frac{a_{n+1}}{a_n} = \frac{2^{n+1}}{(n+1)!} \cdot \frac{n!}{2^n} = \frac{2}{n+1} \to 0 < 1
+\]
+
+לפי מבחן המנה, הטור \textbf{מתכנס}. $\blacksquare$
+\end{exbox}
+
+\subsection{מבחן השורש (קושי)}
+
+\begin{thmbox}
+\textbf{משפט 4.9 (מבחן השורש / קושי).}
+תהי $(a_n)$ סדרה אי־שלילית. נסמן $L = \limsup_{n \to \infty} \sqrt[n]{a_n}$.
+\begin{enumerate}
+    \item אם $L < 1$ אז $\sum a_n$ \textbf{מתכנס}.
+    \item אם $L > 1$ אז $\sum a_n$ \textbf{מתבדר}.
+    \item אם $L = 1$ אז \textbf{המבחן לא מכריע}.
+\end{enumerate}
+\end{thmbox}
+
+\begin{exbox}
+\textbf{דוגמה.} בדקו התכנסות $\sum_{n=1}^{\infty} \frac{1}{2^n + 3^n}$.
+
+\textbf{פתרון:}
+\[
+\sqrt[n]{a_n} = \frac{1}{\sqrt[n]{2^n + 3^n}} = \frac{1}{3 \cdot \sqrt[n]{(\frac{2}{3})^n + 1}} \to \frac{1}{3} < 1
+\]
+
+לפי מבחן השורש, הטור \textbf{מתכנס}. $\blacksquare$
+\end{exbox}
+
+\subsection{מבחן האינטגרל}
+
+\begin{thmbox}
+\textbf{משפט 4.10 (מבחן האינטגרל).}
+תהי $f : [1, \infty) \to [0, \infty)$ פונקציה יורדת ורציפה.
+
+אז הטור $\sum_{n=1}^{\infty} f(n)$ מתכנס אם ורק אם האינטגרל $\int_1^{\infty} f(x) dx$ מתכנס.
+\end{thmbox}
+
+\begin{exbox}
+\textbf{דוגמה (טור $p$).}
+\[
+\sum_{n=1}^{\infty} \frac{1}{n^p} \text{ מתכנס } \iff p > 1
+\]
+
+\textbf{הוכחה:}
+$f(x) = \frac{1}{x^p}$ יורדת ורציפה.
+
+$\int_1^{\infty} \frac{1}{x^p} dx$ מתכנס אם ורק אם $p > 1$ (ראינו בפרק 11).
+
+לפי מבחן האינטגרל, גם הטור מתכנס אם ורק אם $p > 1$. $\blacksquare$
+\end{exbox}
+
+\section{מבחני התכנסות לטורים כלליים}
+
+\subsection{התכנסות בהחלט והתכנסות בתנאי}
+
+\begin{defbox}
+\textbf{הגדרה 4.11 (התכנסות בהחלט).}
+טור $\sum a_n$ \textbf{מתכנס בהחלט} אם הטור $\sum |a_n|$ מתכנס.
+\end{defbox}
+
+\begin{thmbox}
+\textbf{משפט 4.12.}
+אם טור מתכנס בהחלט אז הוא מתכנס.
+\end{thmbox}
+
+\begin{proofbox}
+\textbf{הוכחה.}
+נשתמש בקריטריון קושי. יהי $\eps > 0$.
+
+כיוון ש־$\sum |a_n|$ מתכנס, קיים $N$ כך שלכל $m > n > N$:
+\[
+\sum_{k=n+1}^{m} |a_k| < \eps
+\]
+
+לכן:
+\[
+\left|\sum_{k=n+1}^{m} a_k\right| \le \sum_{k=n+1}^{m} |a_k| < \eps
+\]
+
+לפי קריטריון קושי, $\sum a_n$ מתכנס. $\blacksquare$
+\end{proofbox}
+
+\begin{defbox}
+\textbf{הגדרה 4.13 (התכנסות בתנאי).}
+טור \textbf{מתכנס בתנאי} אם הוא מתכנס אך לא מתכנס בהחלט.
+\end{defbox}
+
+\subsection{מבחן לייבניץ}
+
+\begin{thmbox}
+\textbf{משפט 4.14 (מבחן לייבניץ לטורים מתחלפים).}
+יהי $(a_n)$ סדרה עם:
+\begin{enumerate}
+    \item $a_n \ge 0$ לכל $n$
+    \item $(a_n)$ יורדת מונוטונית
+    \item $\limn a_n = 0$
+\end{enumerate}
+אז הטור המתחלף $\sum_{n=1}^{\infty} (-1)^{n+1} a_n = a_1 - a_2 + a_3 - a_4 + \cdots$ \textbf{מתכנס}.
+\end{thmbox}
+
+\begin{proofbox}
+\textbf{הוכחה.}
+נבחן את הסכומים החלקיים:
+\[
+S_{2n} = (a_1 - a_2) + (a_3 - a_4) + \cdots + (a_{2n-1} - a_{2n})
+\]
+כל סוגריים חיובי (כי $(a_n)$ יורדת), לכן $(S_{2n})$ עולה.
+
+גם:
+\[
+S_{2n} = a_1 - (a_2 - a_3) - (a_4 - a_5) - \cdots - (a_{2n-2} - a_{2n-1}) - a_{2n} \le a_1
+\]
+לכן $(S_{2n})$ חסומה מלעיל.
+
+סדרה עולה וחסומה מתכנסת. נסמן $S = \lim S_{2n}$.
+
+גם $S_{2n+1} = S_{2n} + a_{2n+1} \to S + 0 = S$.
+
+לכן $S_n \to S$. $\blacksquare$
+\end{proofbox}
+
+\begin{exbox}
+\textbf{דוגמה (הטור ההרמוני המתחלף).}
+\[
+\sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{n} = 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \cdots = \ln 2
+\]
+
+\textbf{הוכחה שמתכנס:}
+$a_n = \frac{1}{n}$ מקיימת: $a_n > 0$, יורדת, $a_n \to 0$.
+
+לפי לייבניץ, הטור מתכנס.
+
+\textbf{הערה:} זהו טור שמתכנס \textbf{בתנאי} (לא בהחלט, כי $\sum \frac{1}{n}$ מתבדר). $\blacksquare$
+\end{exbox}
+
+\subsection{מבחן דיריכלה ומבחן אבל}
+
+\begin{thmbox}
+\textbf{משפט 4.15 (מבחן דיריכלה).}
+יהיו $(a_n)$, $(b_n)$ סדרות כך ש:
+\begin{enumerate}
+    \item סדרת הסכומים החלקיים $S_n = \sum_{k=1}^n a_k$ \textbf{חסומה}
+    \item $(b_n)$ \textbf{מונוטונית ומתכנסת ל־$0$}
+\end{enumerate}
+אז הטור $\sum a_n b_n$ מתכנס.
+\end{thmbox}
+
+\begin{thmbox}
+\textbf{משפט 4.16 (מבחן אבל).}
+יהיו $(a_n)$, $(b_n)$ סדרות כך ש:
+\begin{enumerate}
+    \item הטור $\sum a_n$ \textbf{מתכנס}
+    \item $(b_n)$ \textbf{מונוטונית וחסומה}
+\end{enumerate}
+אז הטור $\sum a_n b_n$ מתכנס.
+\end{thmbox}
+
+\section{תרגילים}
+
+\begin{exercisebox}
+\textbf{תרגיל 1.}
+בדקו התכנסות הטורים הבאים:
+\begin{enumerate}
+    \item $\sum_{n=1}^{\infty} \frac{n^2}{2^n}$
+    \item $\sum_{n=2}^{\infty} \frac{1}{n \ln n}$
+    \item $\sum_{n=1}^{\infty} \frac{(-1)^n}{\sqrt{n}}$
+    \item $\sum_{n=1}^{\infty} \frac{n!}{n^n}$
+\end{enumerate}
+
+\textbf{פתרונות:}
+
+\textbf{(א)} מבחן המנה:
+\[
+\frac{a_{n+1}}{a_n} = \frac{(n+1)^2}{2^{n+1}} \cdot \frac{2^n}{n^2} = \frac{1}{2} \cdot \frac{(n+1)^2}{n^2} = \frac{1}{2} \cdot \left(1 + \frac{1}{n}\right)^2 \to \frac{1}{2} < 1
+\]
+\textbf{מתכנס}. $\blacksquare$
+
+\textbf{(ב)} מבחן האינטגרל עם $f(x) = \frac{1}{x \ln x}$:
+\[
+\int_2^{\infty} \frac{dx}{x \ln x} = [\ln(\ln x)]_2^{\infty} = \infty
+\]
+\textbf{מתבדר}. $\blacksquare$
+
+\textbf{(ג)} מבחן לייבניץ: $a_n = \frac{1}{\sqrt{n}}$ יורדת ומתכנסת ל־$0$.
+
+הטור $\sum \frac{(-1)^n}{\sqrt{n}}$ \textbf{מתכנס} (בתנאי, לא בהחלט). $\blacksquare$
+
+\textbf{(ד)} מבחן המנה (ראינו קודם):
+\[
+\frac{a_{n+1}}{a_n} \to \frac{1}{e} < 1
+\]
+\textbf{מתכנס}. $\blacksquare$
+\end{exercisebox}
+
+\begin{exercisebox}
+\textbf{תרגיל 2.}
+הוכיחו כי $\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}$.
+
+\textbf{פתרון (רמז):}
+זוהי תוצאה מפורסמת (בעיית באזל). ההוכחה המלאה משתמשת בפיתוח טיילור של $\frac{\sin x}{x}$ או בניתוח פורייה.
+
+נוכיח רק את ההתכנסות: לכל $n \ge 2$:
+\[
+\frac{1}{n^2} < \frac{1}{n(n-1)} = \frac{1}{n-1} - \frac{1}{n}
+\]
+
+לכן:
+\[
+\sum_{n=2}^{N} \frac{1}{n^2} < \sum_{n=2}^{N} \left(\frac{1}{n-1} - \frac{1}{n}\right) = 1 - \frac{1}{N} < 1
+\]
+
+לכן $\sum_{n=1}^{\infty} \frac{1}{n^2} < 1 + 1 = 2$. הטור מתכנס. $\blacksquare$
+\end{exercisebox}
+
+\begin{exercisebox}
+\textbf{תרגיל 3.}
+קבעו אם הטורים הבאים מתכנסים בהחלט, בתנאי, או מתבדרים:
+\begin{enumerate}
+    \item $\sum_{n=1}^{\infty} \frac{(-1)^n}{n^2}$
+    \item $\sum_{n=1}^{\infty} \frac{\sin n}{n^2}$
+    \item $\sum_{n=1}^{\infty} \frac{(-1)^n \cdot n}{n+1}$
+\end{enumerate}
+
+\textbf{פתרונות:}
+
+\textbf{(א)} $\sum \frac{1}{n^2}$ מתכנס, לכן $\sum \frac{(-1)^n}{n^2}$ \textbf{מתכנס בהחלט}. $\blacksquare$
+
+\textbf{(ב)} $\left|\frac{\sin n}{n^2}\right| \le \frac{1}{n^2}$, ו־$\sum \frac{1}{n^2}$ מתכנס.
+
+לפי מבחן ההשוואה, $\sum \frac{|\sin n|}{n^2}$ מתכנס, לכן הטור \textbf{מתכנס בהחלט}. $\blacksquare$
+
+\textbf{(ג)} $a_n = \frac{(-1)^n \cdot n}{n+1} \to (-1)^n \cdot 1$, לא מתכנס ל־$0$.
+
+לפי התנאי ההכרחי, הטור \textbf{מתבדר}. $\blacksquare$
+\end{exercisebox}

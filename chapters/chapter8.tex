@@ -1,0 +1,307 @@
+% פרק 8: גזירות
+\chapter{גזירות}
+
+\section{הגדרת הנגזרת}
+
+\begin{defbox}
+\textbf{הגדרה 8.1 (נגזרת).}
+תהי $f$ מוגדרת בסביבה של $x_0$. \textbf{הנגזרת} של $f$ בנקודה $x_0$ היא:
+\[
+\boxed{f'(x_0) = \limx{x_0} \frac{f(x) - f(x_0)}{x - x_0} = \lim_{h \to 0} \frac{f(x_0 + h) - f(x_0)}{h}}
+\]
+אם הגבול קיים וסופי, נאמר ש־$f$ \textbf{גזירה} ב־$x_0$.
+\end{defbox}
+
+\begin{thmbox}
+\textbf{טענה 8.2.}
+אם $f$ גזירה ב־$x_0$ אז $f$ רציפה ב־$x_0$.
+\end{thmbox}
+
+\begin{proofbox}
+\textbf{הוכחה.}
+\[
+\limx{x_0} (f(x) - f(x_0)) = \limx{x_0} \frac{f(x) - f(x_0)}{x - x_0} \cdot (x - x_0) = f'(x_0) \cdot 0 = 0
+\]
+לכן $\limx{x_0} f(x) = f(x_0)$. $\blacksquare$
+\end{proofbox}
+
+\begin{notebox}
+\textbf{אזהרה!}
+ההפך לא נכון: $f(x) = |x|$ רציפה ב־$0$ אבל לא גזירה שם.
+\end{notebox}
+
+\section{כללי גזירה}
+
+\begin{thmbox}
+\textbf{משפט 8.3 (אריתמטיקה של נגזרות).}
+אם $f, g$ גזירות ב־$x_0$ אז:
+\begin{enumerate}
+    \item $(f + g)'(x_0) = f'(x_0) + g'(x_0)$
+    \item $(cf)'(x_0) = c \cdot f'(x_0)$
+    \item $(fg)'(x_0) = f'(x_0)g(x_0) + f(x_0)g'(x_0)$ \textbf{(כלל המכפלה)}
+    \item $\left(\frac{f}{g}\right)'(x_0) = \frac{f'(x_0)g(x_0) - f(x_0)g'(x_0)}{[g(x_0)]^2}$ (אם $g(x_0) \neq 0$) \textbf{(כלל המנה)}
+\end{enumerate}
+\end{thmbox}
+
+\begin{thmbox}
+\textbf{משפט 8.4 (כלל השרשרת).}
+אם $g$ גזירה ב־$x_0$ ו־$f$ גזירה ב־$g(x_0)$, אז:
+\[
+\boxed{(f \circ g)'(x_0) = f'(g(x_0)) \cdot g'(x_0)}
+\]
+\end{thmbox}
+
+\begin{thmbox}
+\textbf{משפט 8.5 (נגזרת פונקציה הפוכה).}
+אם $f$ גזירה והפיכה עם $f'(x_0) \neq 0$, אז:
+\[
+(f^{-1})'(f(x_0)) = \frac{1}{f'(x_0)}
+\]
+או בסימון אחר: $(f^{-1})'(y) = \frac{1}{f'(f^{-1}(y))}$.
+\end{thmbox}
+
+\section{טבלת נגזרות}
+
+\begin{notebox}
+\textbf{נגזרות חשובות:}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+$f(x)$ & $f'(x)$ \\
+\hline
+$x^n$ & $nx^{n-1}$ \\
+$e^x$ & $e^x$ \\
+$a^x$ & $a^x \ln a$ \\
+$\ln x$ & $\frac{1}{x}$ \\
+$\log_a x$ & $\frac{1}{x \ln a}$ \\
+$\sin x$ & $\cos x$ \\
+$\cos x$ & $-\sin x$ \\
+$\tan x$ & $\frac{1}{\cos^2 x} = 1 + \tan^2 x$ \\
+$\arcsin x$ & $\frac{1}{\sqrt{1-x^2}}$ \\
+$\arccos x$ & $-\frac{1}{\sqrt{1-x^2}}$ \\
+$\arctan x$ & $\frac{1}{1+x^2}$ \\
+\hline
+\end{tabular}
+\end{center}
+\end{notebox}
+
+\section{משפטי ערך הביניים}
+
+\begin{thmbox}
+\textbf{משפט 8.6 (פרמה).}
+אם $f$ מקבלת מקסימום או מינימום מקומי ב־$x_0$ פנימית, ו־$f$ גזירה ב־$x_0$, אז $f'(x_0) = 0$.
+\end{thmbox}
+
+\begin{thmbox}
+\textbf{משפט 8.7 (רול).}
+אם $f : [a, b] \to \R$ רציפה ב־$[a, b]$, גזירה ב־$(a, b)$, ו־$f(a) = f(b)$, אז קיים $c \in (a, b)$ כך ש־$f'(c) = 0$.
+\end{thmbox}
+
+\begin{thmbox}
+\textbf{משפט 8.8 (לגרנז' / ערך הביניים לנגזרות).}
+אם $f : [a, b] \to \R$ רציפה ב־$[a, b]$ וגזירה ב־$(a, b)$, אז קיים $c \in (a, b)$ כך ש:
+\[
+\boxed{f'(c) = \frac{f(b) - f(a)}{b - a}}
+\]
+\end{thmbox}
+
+\begin{proofbox}
+\textbf{הוכחה.}
+נגדיר $g(x) = f(x) - \frac{f(b) - f(a)}{b - a}(x - a)$.
+
+אז $g(a) = f(a)$ ו־$g(b) = f(a)$.
+
+לפי רול, קיים $c \in (a, b)$ כך ש־$g'(c) = 0$.
+
+$g'(c) = f'(c) - \frac{f(b) - f(a)}{b - a} = 0$. $\blacksquare$
+\end{proofbox}
+
+\begin{thmbox}
+\textbf{משפט 8.9 (קושי).}
+אם $f, g : [a, b] \to \R$ רציפות ב־$[a, b]$ וגזירות ב־$(a, b)$ עם $g'(x) \neq 0$ לכל $x \in (a, b)$, אז קיים $c \in (a, b)$ כך ש:
+\[
+\frac{f'(c)}{g'(c)} = \frac{f(b) - f(a)}{g(b) - g(a)}
+\]
+\end{thmbox}
+
+\section{כלל לופיטל}
+
+\begin{thmbox}
+\textbf{משפט 8.10 (כלל לופיטל — צורה $\frac{0}{0}$).}
+אם $\limx{a} f(x) = \limx{a} g(x) = 0$, ו־$g'(x) \neq 0$ בסביבה מנוקבת של $a$, וקיים $\limx{a} \frac{f'(x)}{g'(x)} = L$ (כולל $\pm\infty$), אז:
+\[
+\limx{a} \frac{f(x)}{g(x)} = L
+\]
+\end{thmbox}
+
+\begin{thmbox}
+\textbf{משפט 8.11 (כלל לופיטל — צורה $\frac{\infty}{\infty}$).}
+אם $\limx{a} |f(x)| = \limx{a} |g(x)| = \infty$, וקיים $\limx{a} \frac{f'(x)}{g'(x)} = L$, אז:
+\[
+\limx{a} \frac{f(x)}{g(x)} = L
+\]
+\end{thmbox}
+
+\begin{exbox}
+\textbf{דוגמה 1.} חשבו $\limx{0} \frac{e^x - 1 - x}{x^2}$.
+
+\textbf{פתרון:} צורה $\frac{0}{0}$. לופיטל:
+\[
+\limx{0} \frac{e^x - 1 - x}{x^2} = \limx{0} \frac{e^x - 1}{2x} = \limx{0} \frac{e^x}{2} = \frac{1}{2} \quad \blacksquare
+\]
+\end{exbox}
+
+\begin{exbox}
+\textbf{דוגמה 2.} חשבו $\limx{0^+} x \ln x$.
+
+\textbf{פתרון:} צורה $0 \cdot (-\infty)$. נכתוב $x \ln x = \frac{\ln x}{1/x}$ (צורה $\frac{-\infty}{\infty}$).
+
+לופיטל:
+\[
+\limx{0^+} \frac{\ln x}{1/x} = \limx{0^+} \frac{1/x}{-1/x^2} = \limx{0^+} (-x) = 0 \quad \blacksquare
+\]
+\end{exbox}
+
+\begin{exbox}
+\textbf{דוגמה 3.} חשבו $\limx{0^+} x^x$.
+
+\textbf{פתרון:} צורה $0^0$. נכתוב $x^x = e^{x \ln x}$.
+
+מדוגמה 2: $x \ln x \to 0$.
+
+לכן $x^x = e^{x \ln x} \to e^0 = 1$. $\blacksquare$
+\end{exbox}
+
+\section{פולינום טיילור}
+
+\begin{defbox}
+\textbf{הגדרה 8.12 (פולינום טיילור).}
+אם $f$ גזירה $n$ פעמים ב־$x_0$, \textbf{פולינום טיילור מדרגה $n$} סביב $x_0$ הוא:
+\[
+\boxed{P_n(x) = \sum_{k=0}^{n} \frac{f^{(k)}(x_0)}{k!}(x - x_0)^k = f(x_0) + f'(x_0)(x-x_0) + \frac{f''(x_0)}{2!}(x-x_0)^2 + \cdots}
+\]
+\end{defbox}
+
+\begin{thmbox}
+\textbf{משפט 8.13 (טיילור עם שארית לגרנז').}
+אם $f$ גזירה $n+1$ פעמים ב־$[a, b]$, אז לכל $x \in [a, b]$ קיים $c$ בין $x_0$ ל־$x$ כך ש:
+\[
+f(x) = P_n(x) + R_n(x)
+\]
+כאשר השארית היא:
+\[
+R_n(x) = \frac{f^{(n+1)}(c)}{(n+1)!}(x - x_0)^{n+1}
+\]
+\end{thmbox}
+
+\begin{notebox}
+\textbf{פיתוחי מקלורן חשובים (סביב $x_0 = 0$):}
+\begin{align*}
+e^x &= \sum_{n=0}^{\infty} \frac{x^n}{n!} = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots \\
+\sin x &= \sum_{n=0}^{\infty} \frac{(-1)^n x^{2n+1}}{(2n+1)!} = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \cdots \\
+\cos x &= \sum_{n=0}^{\infty} \frac{(-1)^n x^{2n}}{(2n)!} = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \cdots \\
+\ln(1+x) &= \sum_{n=1}^{\infty} \frac{(-1)^{n+1} x^n}{n} = x - \frac{x^2}{2} + \frac{x^3}{3} - \cdots \quad (|x| \le 1, x \neq -1) \\
+\frac{1}{1-x} &= \sum_{n=0}^{\infty} x^n = 1 + x + x^2 + x^3 + \cdots \quad (|x| < 1) \\
+(1+x)^\alpha &= \sum_{n=0}^{\infty} \binom{\alpha}{n} x^n = 1 + \alpha x + \frac{\alpha(\alpha-1)}{2!}x^2 + \cdots
+\end{align*}
+\end{notebox}
+
+\section{חקירת פונקציות}
+
+\begin{thmbox}
+\textbf{טענה 8.14 (תנאי לעליה/ירידה).}
+תהי $f$ גזירה בקטע $I$.
+\begin{itemize}
+    \item $f' > 0$ ב־$I$ $\Rightarrow$ $f$ עולה ממש ב־$I$
+    \item $f' < 0$ ב־$I$ $\Rightarrow$ $f$ יורדת ממש ב־$I$
+    \item $f' \ge 0$ ב־$I$ $\Rightarrow$ $f$ עולה (לא בהכרח ממש) ב־$I$
+\end{itemize}
+\end{thmbox}
+
+\begin{thmbox}
+\textbf{טענה 8.15 (מבחן הנגזרת השנייה לקיצון).}
+אם $f'(x_0) = 0$ ו־$f''(x_0) \neq 0$:
+\begin{itemize}
+    \item $f''(x_0) > 0$ $\Rightarrow$ $x_0$ נקודת מינימום מקומי
+    \item $f''(x_0) < 0$ $\Rightarrow$ $x_0$ נקודת מקסימום מקומי
+\end{itemize}
+\end{thmbox}
+
+\begin{defbox}
+\textbf{הגדרה 8.16 (קעירות).}
+$f$ \textbf{קעורה כלפי מעלה} (קמורה) בקטע אם $f'' > 0$ בקטע.
+
+$f$ \textbf{קעורה כלפי מטה} (קעורה) בקטע אם $f'' < 0$ בקטע.
+
+\textbf{נקודת פיתול}: נקודה שבה $f$ משנה קעירות.
+\end{defbox}
+
+\section{תרגילים}
+
+\begin{exercisebox}
+\textbf{תרגיל 1.}
+חשבו $\limx{0} \frac{\sin x - x + \frac{x^3}{6}}{x^5}$.
+
+\textbf{פתרון:}
+נשתמש בפיתוח טיילור: $\sin x = x - \frac{x^3}{6} + \frac{x^5}{120} - O(x^7)$.
+
+\[
+\sin x - x + \frac{x^3}{6} = \frac{x^5}{120} - O(x^7)
+\]
+
+\[
+\frac{\sin x - x + \frac{x^3}{6}}{x^5} = \frac{1}{120} - O(x^2) \to \frac{1}{120} \quad \blacksquare
+\]
+\end{exercisebox}
+
+\begin{exercisebox}
+\textbf{תרגיל 2.}
+חקרו את הפונקציה $f(x) = x e^{-x}$ (מקסימום, מינימום, קעירות, אסימפטוטות).
+
+\textbf{פתרון:}
+\textbf{תחום:} $\R$.
+
+\textbf{נגזרות:}
+\[
+f'(x) = e^{-x} - xe^{-x} = e^{-x}(1 - x)
+\]
+\[
+f''(x) = -e^{-x}(1-x) - e^{-x} = e^{-x}(x - 2)
+\]
+
+\textbf{נקודות קריטיות:} $f'(x) = 0 \Rightarrow x = 1$.
+
+$f''(1) = e^{-1}(1-2) = -e^{-1} < 0$ $\Rightarrow$ $x = 1$ מקסימום מקומי.
+
+$f(1) = e^{-1} = \frac{1}{e}$.
+
+\textbf{קעירות:} $f''(x) = 0 \Rightarrow x = 2$.
+
+$x < 2$: $f'' < 0$ (קעורה כלפי מטה).
+
+$x > 2$: $f'' > 0$ (קעורה כלפי מעלה).
+
+$x = 2$ נקודת פיתול, $f(2) = 2e^{-2}$.
+
+\textbf{אסימפטוטות:}
+\[
+\limx{-\infty} xe^{-x} = -\infty, \quad \limx{\infty} xe^{-x} = 0 \text{ (לופיטל)}
+\]
+אסימפטוטה אופקית $y = 0$ ב־$x \to \infty$. $\blacksquare$
+\end{exercisebox}
+
+\begin{exercisebox}
+\textbf{תרגיל 3.}
+הוכיחו כי לכל $x > 0$: $\ln(1 + x) < x$.
+
+\textbf{פתרון:}
+נגדיר $f(x) = x - \ln(1+x)$ לכל $x > 0$.
+
+$f(0) = 0$.
+
+$f'(x) = 1 - \frac{1}{1+x} = \frac{x}{1+x} > 0$ לכל $x > 0$.
+
+לכן $f$ עולה ממש ב־$(0, \infty)$.
+
+מכאן $f(x) > f(0) = 0$ לכל $x > 0$, כלומר $x > \ln(1+x)$. $\blacksquare$
+\end{exercisebox}

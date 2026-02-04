@@ -1,0 +1,320 @@
+% פרק 2: תכונות המספרים הממשיים
+\chapter{תכונות המספרים הממשיים}
+
+\section{ערך מוחלט}
+
+\begin{defbox}
+\textbf{הגדרה 2.1 (ערך מוחלט).}
+לכל $x \in \R$ נגדיר את \textbf{הערך המוחלט} של $x$:
+\[
+|x| = \begin{cases}
+x & x \ge 0 \\
+-x & x < 0
+\end{cases}
+\]
+\end{defbox}
+
+\begin{thmbox}
+\textbf{טענה 2.2 (תכונות ערך מוחלט).}
+לכל $x, y \in \R$:
+\begin{enumerate}
+    \item $|x| \ge 0$, ו־$|x| = 0 \iff x = 0$
+    \item $|xy| = |x| \cdot |y|$
+    \item $\left|\frac{x}{y}\right| = \frac{|x|}{|y|}$ (עבור $y \neq 0$)
+    \item $-|x| \le x \le |x|$
+    \item \textbf{אי־שוויון המשולש:} $|x + y| \le |x| + |y|$
+    \item \textbf{אי־שוויון המשולש ההפוך:} $\big||x| - |y|\big| \le |x - y|$
+\end{enumerate}
+\end{thmbox}
+
+\begin{proofbox}
+\textbf{הוכחת אי־שוויון המשולש.}
+מתקיים $-|x| \le x \le |x|$ וגם $-|y| \le y \le |y|$.
+
+בחיבור: $-(|x| + |y|) \le x + y \le |x| + |y|$.
+
+לכן $|x + y| \le |x| + |y|$. \hfill $\blacksquare$
+\end{proofbox}
+
+\begin{exbox}
+\textbf{דוגמה.} הוכיחו כי לכל $x, y, z \in \R$:
+\[
+|x - z| \le |x - y| + |y - z|
+\]
+
+\textbf{פתרון:} נציב $a = x - y$, $b = y - z$ באי־שוויון המשולש:
+\[
+|a + b| \le |a| + |b| \implies |(x-y) + (y-z)| \le |x-y| + |y-z| \implies |x-z| \le |x-y| + |y-z| \quad \blacksquare
+\]
+\end{exbox}
+
+\section{חסמים}
+
+\begin{defbox}
+\textbf{הגדרה 2.3 (חסם).}
+תהי $A \subseteq \R$ קבוצה לא ריקה.
+\begin{itemize}
+    \item $M \in \R$ נקרא \textbf{חסם מלעיל} של $A$ אם לכל $a \in A$ מתקיים $a \le M$.
+    \item $m \in \R$ נקרא \textbf{חסם מלרע} של $A$ אם לכל $a \in A$ מתקיים $a \ge m$.
+\end{itemize}
+קבוצה נקראת \textbf{חסומה מלעיל/מלרע} אם יש לה חסם מלעיל/מלרע. קבוצה \textbf{חסומה} אם היא חסומה גם מלעיל וגם מלרע.
+\end{defbox}
+
+\begin{defbox}
+\textbf{הגדרה 2.4 (מקסימום ומינימום).}
+תהי $A \subseteq \R$ קבוצה לא ריקה.
+\begin{itemize}
+    \item $M \in A$ נקרא \textbf{מקסימום} של $A$ (ונסמן $M = \max A$) אם $M$ חסם מלעיל של $A$.
+    \item $m \in A$ נקרא \textbf{מינימום} של $A$ (ונסמן $m = \min A$) אם $m$ חסם מלרע של $A$.
+\end{itemize}
+\end{defbox}
+
+\begin{notebox}
+\textbf{הערה.}
+לא לכל קבוצה יש מקסימום או מינימום!
+
+\textbf{דוגמה:} לקבוצה $(0, 1)$ אין מקסימום ואין מינימום.
+\end{notebox}
+
+\section{סופרימום ואינפימום}
+
+\begin{defbox}
+\textbf{הגדרה 2.5 (סופרימום).}
+תהי $A \subseteq \R$ קבוצה לא ריקה וחסומה מלעיל.
+
+$s \in \R$ נקרא \textbf{סופרימום (חסם עליון מינימלי)} של $A$ ונסמן $s = \sup A$ אם:
+\begin{enumerate}
+    \item $s$ חסם מלעיל של $A$ (לכל $a \in A$: $a \le s$)
+    \item $s$ הוא החסם מלעיל \textbf{הקטן ביותר}: לכל $\eps > 0$ קיים $a \in A$ כך ש־$a > s - \eps$
+\end{enumerate}
+\end{defbox}
+
+\begin{defbox}
+\textbf{הגדרה 2.6 (אינפימום).}
+תהי $A \subseteq \R$ קבוצה לא ריקה וחסומה מלרע.
+
+$t \in \R$ נקרא \textbf{אינפימום (חסם תחתון מקסימלי)} של $A$ ונסמן $t = \inf A$ אם:
+\begin{enumerate}
+    \item $t$ חסם מלרע של $A$ (לכל $a \in A$: $a \ge t$)
+    \item $t$ הוא החסם מלרע \textbf{הגדול ביותר}: לכל $\eps > 0$ קיים $a \in A$ כך ש־$a < t + \eps$
+\end{enumerate}
+\end{defbox}
+
+\begin{thmbox}
+\textbf{טענה 2.7 (אפיון הסופרימום).}
+$s = \sup A$ אם ורק אם מתקיימים שני התנאים:
+\begin{enumerate}
+    \item לכל $a \in A$: $a \le s$
+    \item לכל $\eps > 0$ קיים $a \in A$ כך ש־$a > s - \eps$
+\end{enumerate}
+\end{thmbox}
+
+\begin{exbox}
+\textbf{דוגמה 1.} מצאו $\sup A$ ו־$\inf A$ עבור $A = (0, 1]$.
+
+\textbf{פתרון:}
+\begin{itemize}
+    \item $\sup A = 1$ (ו־$\max A = 1$ כי $1 \in A$)
+    \item $\inf A = 0$ (אבל $\min A$ לא קיים כי $0 \notin A$)
+\end{itemize}
+
+\textbf{הוכחה ש־$\inf A = 0$:}
+\begin{enumerate}
+    \item $0$ חסם מלרע: לכל $x \in (0,1]$ מתקיים $x > 0$.
+    \item $0$ הוא החסם הגדול ביותר: לכל $\eps > 0$, נבחר $a = \min(\frac{\eps}{2}, \frac{1}{2}) \in A$. אז $a < 0 + \eps$. $\blacksquare$
+\end{enumerate}
+\end{exbox}
+
+\begin{exbox}
+\textbf{דוגמה 2.} מצאו $\sup A$ עבור $A = \left\{\frac{n}{n+1} : n \in \N\right\} = \left\{0, \frac{1}{2}, \frac{2}{3}, \frac{3}{4}, \ldots\right\}$.
+
+\textbf{פתרון:}
+נטען $\sup A = 1$.
+
+\begin{enumerate}
+    \item $1$ חסם מלעיל: $\frac{n}{n+1} < 1$ לכל $n \in \N$.
+    \item לכל $\eps > 0$, נבחר $n$ כך ש־$\frac{1}{n+1} < \eps$ (כלומר $n > \frac{1}{\eps} - 1$). אז:
+    \[
+    \frac{n}{n+1} = 1 - \frac{1}{n+1} > 1 - \eps \quad \blacksquare
+    \]
+\end{enumerate}
+\end{exbox}
+
+\section{אקסיומת השלמות}
+
+\begin{thmbox}
+\textbf{אקסיומה 2.8 (אקסיומת השלמות).}
+לכל קבוצה $A \subseteq \R$ לא ריקה וחסומה מלעיל \textbf{קיים סופרימום}.
+
+באופן שקול: לכל קבוצה לא ריקה וחסומה מלרע קיים אינפימום.
+\end{thmbox}
+
+\begin{notebox}
+\textbf{הערה חשובה.}
+אקסיומת השלמות היא מה שמבדיל את $\R$ מ־$\Q$!
+
+\textbf{דוגמה:} הקבוצה $A = \{x \in \Q : x^2 < 2\}$ חסומה מלעיל ב־$\Q$ (למשל על ידי $2$), אבל אין לה סופרימום ב־$\Q$.
+
+(הסופרימום היה צריך להיות $\sqrt{2}$, אבל $\sqrt{2} \notin \Q$.)
+\end{notebox}
+
+\begin{thmbox}
+\textbf{משפט 2.9 (תכונת ארכימדס).}
+לכל $x, y \in \R$ עם $x > 0$, קיים $n \in \N$ כך ש־$nx > y$.
+
+\textbf{באופן שקול:} לכל $\eps > 0$ קיים $n \in \N$ כך ש־$\frac{1}{n} < \eps$.
+\end{thmbox}
+
+\begin{proofbox}
+\textbf{הוכחה.}
+נניח בשלילה שלכל $n \in \N$: $nx \le y$.
+
+אז הקבוצה $A = \{nx : n \in \N\}$ חסומה מלעיל (על ידי $y$).
+
+לפי אקסיומת השלמות, קיים $s = \sup A$.
+
+כיוון ש־$x > 0$, מתקיים $s - x < s$, ולכן $s - x$ אינו חסם מלעיל של $A$.
+
+לכן קיים $n \in \N$ כך ש־$nx > s - x$, כלומר $(n+1)x > s$.
+
+אבל $(n+1)x \in A$, וזו סתירה לכך ש־$s$ חסם מלעיל של $A$. $\blacksquare$
+\end{proofbox}
+
+\begin{thmbox}
+\textbf{משפט 2.10 (צפיפות הרציונליים).}
+בין כל שני ממשיים שונים קיים מספר רציונלי.
+
+כלומר: לכל $a, b \in \R$ עם $a < b$, קיים $q \in \Q$ כך ש־$a < q < b$.
+\end{thmbox}
+
+\begin{proofbox}
+\textbf{הוכחה.}
+לפי תכונת ארכימדס, קיים $n \in \N_+$ כך ש־$\frac{1}{n} < b - a$, כלומר $1 < n(b-a)$.
+
+נגדיר $m = \lfloor na \rfloor + 1$ (המספר השלם הקטן ביותר הגדול מ־$na$).
+
+אז $na < m \le na + 1$.
+
+מצד אחד: $\frac{m}{n} > a$.
+
+מצד שני: $\frac{m}{n} \le \frac{na + 1}{n} = a + \frac{1}{n} < a + (b - a) = b$.
+
+לכן $a < \frac{m}{n} < b$ והמספר $q = \frac{m}{n}$ רציונלי. $\blacksquare$
+\end{proofbox}
+
+\section{תכונות נוספות}
+
+\begin{thmbox}
+\textbf{טענה 2.11 (תכונות sup ו־inf).}
+יהיו $A, B \subseteq \R$ קבוצות לא ריקות וחסומות.
+\begin{enumerate}
+    \item $\sup(A \cup B) = \max\{\sup A, \sup B\}$
+    \item $\inf(A \cup B) = \min\{\inf A, \inf B\}$
+    \item אם $A \subseteq B$ אז $\sup A \le \sup B$ ו־$\inf A \ge \inf B$
+    \item $\sup(A + B) = \sup A + \sup B$ כאשר $A + B = \{a + b : a \in A, b \in B\}$
+    \item $\sup(-A) = -\inf A$ כאשר $-A = \{-a : a \in A\}$
+\end{enumerate}
+\end{thmbox}
+
+\begin{proofbox}
+\textbf{הוכחה (סעיף 4).}
+נסמן $s = \sup A$, $t = \sup B$.
+
+\textbf{שלב 1:} $s + t$ חסם מלעיל של $A + B$.
+
+לכל $a \in A$, $b \in B$: $a \le s$ ו־$b \le t$, לכן $a + b \le s + t$.
+
+\textbf{שלב 2:} $s + t$ הוא החסם הקטן ביותר.
+
+יהי $\eps > 0$. קיימים $a \in A$, $b \in B$ כך ש־$a > s - \frac{\eps}{2}$ ו־$b > t - \frac{\eps}{2}$.
+
+לכן $a + b > s + t - \eps$, והאיבר $a + b \in A + B$. $\blacksquare$
+\end{proofbox}
+
+\section{ערך שלם}
+
+\begin{defbox}
+\textbf{הגדרה 2.12 (פונקציית הערך השלם).}
+לכל $x \in \R$, \textbf{הערך השלם} (או \textbf{פונקציית הרצפה}) $\lfloor x \rfloor$ הוא המספר השלם הגדול ביותר שקטן או שווה ל־$x$:
+\[
+\lfloor x \rfloor = \max\{n \in \Z : n \le x\}
+\]
+\end{defbox}
+
+\begin{thmbox}
+\textbf{טענה 2.13 (תכונות ערך שלם).}
+לכל $x \in \R$:
+\begin{enumerate}
+    \item $\lfloor x \rfloor \le x < \lfloor x \rfloor + 1$
+    \item $x - 1 < \lfloor x \rfloor \le x$
+    \item $\lfloor x \rfloor = x \iff x \in \Z$
+\end{enumerate}
+\end{thmbox}
+
+\section{תרגילים}
+
+\begin{exercisebox}
+\textbf{תרגיל 1.}
+הוכיחו כי לכל קבוצה לא ריקה $A \subseteq \R$:
+\[
+\sup A = -\inf(-A)
+\]
+
+\textbf{פתרון:}
+נסמן $s = \sup A$ ו־$t = \inf(-A)$.
+
+\textbf{צ"ל:} $s = -t$.
+
+$t$ חסם מלרע של $-A$: לכל $-a \in -A$ (כלומר $a \in A$) מתקיים $-a \ge t$, כלומר $a \le -t$.
+
+לכן $-t$ חסם מלעיל של $A$, ומכאן $s \le -t$.
+
+באופן דומה (או מסימטריה): $-s \le t$, כלומר $-t \le s$.
+
+מכאן $s = -t$. $\blacksquare$
+\end{exercisebox}
+
+\begin{exercisebox}
+\textbf{תרגיל 2.}
+תהי $A \subseteq \R$ לא ריקה וחסומה. הוכיחו כי אם $\sup A \notin A$ אז קיימת סדרה $(a_n)$ ב־$A$ כך ש־$\limn a_n = \sup A$.
+
+\textbf{פתרון:}
+נסמן $s = \sup A$. לכל $n \in \N_+$, לפי אפיון הסופרימום, קיים $a_n \in A$ כך ש:
+\[
+s - \frac{1}{n} < a_n \le s
+\]
+(האי־שוויון $a_n \le s$ נובע מכך ש־$s$ חסם מלעיל, והאי־שוויון $a_n < s$ נובע מכך ש־$s \notin A$).
+
+לפי כלל הסנדוויץ': $\limn a_n = s$. $\blacksquare$
+\end{exercisebox}
+
+\begin{exercisebox}
+\textbf{תרגיל 3.}
+מצאו $\sup A$ ו־$\inf A$ עבור:
+\[
+A = \left\{\frac{(-1)^n}{n} + \frac{1}{n^2} : n \in \N_+\right\}
+\]
+
+\textbf{פתרון:}
+נפרק למקרים:
+\begin{itemize}
+    \item $n$ זוגי: $a_n = \frac{1}{n} + \frac{1}{n^2} > 0$
+    \item $n$ אי־זוגי: $a_n = -\frac{1}{n} + \frac{1}{n^2} = \frac{1-n}{n^2}$
+\end{itemize}
+
+עבור $n = 1$: $a_1 = -1 + 1 = 0$.
+
+עבור $n = 2$: $a_2 = \frac{1}{2} + \frac{1}{4} = \frac{3}{4}$.
+
+עבור $n$ אי־זוגי $\ge 3$: $a_n = \frac{1-n}{n^2} < 0$.
+
+\textbf{מקסימום:} $a_2 = \frac{3}{4}$ הוא האיבר הגדול ביותר (בודקים שלכל $n \ge 2$ זוגי: $a_n = \frac{1}{n} + \frac{1}{n^2} \le \frac{1}{2} + \frac{1}{4}$).
+
+לכן $\sup A = \max A = \frac{3}{4}$.
+
+\textbf{אינפימום:} עבור $n$ אי־זוגי גדול, $a_n = \frac{1-n}{n^2} \to 0^-$.
+
+המינימום הוא $a_3 = \frac{1-3}{9} = -\frac{2}{9}$.
+
+לכן $\inf A = \min A = -\frac{2}{9}$. $\blacksquare$
+\end{exercisebox}

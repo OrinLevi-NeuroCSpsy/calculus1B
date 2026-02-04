@@ -1,30 +1,81 @@
 % !TeX program = xelatex
-\documentclass[12pt]{article}
+\documentclass[12pt, a4paper]{book}
 
 \input{preamble}
 \input{macros}
 
 \begin{document}
 
+% עמוד שער
+\begin{titlepage}
 \begin{center}
-\begin{english}
-{\LARGE \textbf{Calculus 1B (Zenzor)}}\\[0.4cm]
-{\Large Orin Levi}\\[0.2cm]
-\end{english}
-{\Large \textbf{חדו"א 1ב למדמ״ח ת״א— סיכום לפי אביב צנזור}}\\[0.2cm]
-\end{center}
+\vspace*{2cm}
 
-\vspace{0.3cm}
+\begin{english}
+{\Huge \textbf{Calculus 1B}}\\[0.5cm]
+{\Large Complete Course Summary}\\[1cm]
+{\large Orin Levi}\\[0.5cm]
+\end{english}
+
+\vspace{1cm}
+
+{\Huge \textbf{חשבון אינפיניטסימלי 1ב}}\\[0.5cm]
+{\Large סיכום מקיף לקורס}\\[1cm]
+{\large אוניברסיטת תל אביב}\\[0.3cm]
+{\large מדעי המחשב}\\[2cm]
+
+\vfill
+
+{\large \today}
+
+\end{center}
+\end{titlepage}
 
 \setcounter{tocdepth}{2}
 \tableofcontents
 \clearpage
 
-% יחידות — סיכום לפי החומר הרשמי (official_material)
-\input{units/unit1}
-\input{units/unit2}
-\input{units/unit3}
-\input{units/unit4}
-\input{units/unit5}
+% ===================================
+% חלק I: תורת הקבוצות והמספרים הממשיים
+% ===================================
+\part{תורת הקבוצות והמספרים הממשיים}
+
+\input{chapters/chapter1}  % תורת הקבוצות
+\input{chapters/chapter2}  % תכונות הממשיים, sup, inf
+
+% ===================================
+% חלק II: סדרות וטורים
+% ===================================
+\part{סדרות וטורים}
+
+\input{chapters/chapter3}  % סדרות
+\input{chapters/chapter4}  % טורים
+
+% ===================================
+% חלק III: גבולות ורציפות
+% ===================================
+\part{גבולות ורציפות}
+
+\input{chapters/chapter5}  % פונקציות במשתנה אחד
+\input{chapters/chapter6}  % גבולות של פונקציות
+\input{chapters/chapter7}  % רציפות
+
+% ===================================
+% חלק IV: גזירות
+% ===================================
+\part{גזירות}
+
+\input{chapters/chapter8}  % גזירות, לופיטל, טיילור
+
+% ===================================
+% חלק V: אינטגרל רימן
+% ===================================
+\part{אינטגרל רימן}
+
+\input{units/unit1}  % פונקציות קדומות
+\input{units/unit2}  % אינטגרל רימן
+\input{units/unit3}  % המשפט היסודי
+\input{units/unit4}  % שיטות אינטגרציה
+\input{units/unit5}  % אינטגרלים לא אמיתיים
 
 \end{document}

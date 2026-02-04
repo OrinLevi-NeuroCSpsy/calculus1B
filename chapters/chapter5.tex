@@ -1,0 +1,90 @@
+% פרק 5: פונקציות במשתנה אחד - מושגים בסיסיים
+\chapter{פונקציות במשתנה אחד}
+
+\section{פונקציות ממשיות}
+
+\begin{defbox}
+\textbf{הגדרה 5.1.}
+\textbf{פונקציה ממשית} היא פונקציה $f : D \to \R$ כאשר $D \subseteq \R$ נקרא \textbf{תחום ההגדרה}.
+\end{defbox}
+
+\begin{defbox}
+\textbf{הגדרה 5.2 (סוגי פונקציות).}
+פונקציה $f : D \to \R$ נקראת:
+\begin{itemize}
+    \item \textbf{חסומה מלעיל}: קיים $M$ כך ש־$f(x) \le M$ לכל $x \in D$
+    \item \textbf{חסומה מלרע}: קיים $m$ כך ש־$f(x) \ge m$ לכל $x \in D$
+    \item \textbf{חסומה}: חסומה מלעיל ומלרע
+    \item \textbf{עולה}: $x_1 < x_2 \Rightarrow f(x_1) \le f(x_2)$
+    \item \textbf{עולה ממש}: $x_1 < x_2 \Rightarrow f(x_1) < f(x_2)$
+    \item \textbf{זוגית}: $f(-x) = f(x)$ לכל $x$ (והתחום סימטרי)
+    \item \textbf{אי־זוגית}: $f(-x) = -f(x)$ לכל $x$
+    \item \textbf{מחזורית}: קיים $T > 0$ כך ש־$f(x + T) = f(x)$ לכל $x$
+\end{itemize}
+\end{defbox}
+
+\section{פונקציות אלמנטריות}
+
+\begin{notebox}
+\textbf{הפונקציות האלמנטריות:}
+\begin{enumerate}
+    \item \textbf{פולינומים:} $p(x) = a_n x^n + \cdots + a_1 x + a_0$
+    \item \textbf{פונקציות רציונליות:} $\frac{p(x)}{q(x)}$ (מנת פולינומים)
+    \item \textbf{פונקציות טריגונומטריות:} $\sin, \cos, \tan, \cot$
+    \item \textbf{פונקציות טריגונומטריות הפוכות:} $\arcsin, \arccos, \arctan$
+    \item \textbf{פונקציה מעריכית:} $e^x$ או $a^x$
+    \item \textbf{פונקציה לוגריתמית:} $\ln x$ או $\log_a x$
+    \item \textbf{חזקה כללית:} $x^a = e^{a \ln x}$ (עבור $x > 0$)
+\end{enumerate}
+\end{notebox}
+
+\section{פונקציות מיוחדות}
+
+\begin{defbox}
+\textbf{פונקציית דיריכלה:}
+\[
+D(x) = \begin{cases}
+1 & x \in \Q \\
+0 & x \notin \Q
+\end{cases}
+\]
+פונקציה זו אינה רציפה בשום נקודה!
+\end{defbox}
+
+\begin{defbox}
+\textbf{פונקציית הסימן:}
+\[
+\text{sgn}(x) = \begin{cases}
+1 & x > 0 \\
+0 & x = 0 \\
+-1 & x < 0
+\end{cases}
+\]
+\end{defbox}
+
+\begin{defbox}
+\textbf{פונקציית הערך השלם (רצפה):}
+\[
+\lfloor x \rfloor = \max\{n \in \Z : n \le x\}
+\]
+\end{defbox}
+
+\section{תרגילים}
+
+\begin{exercisebox}
+\textbf{תרגיל 1.}
+הוכיחו כי לכל פונקציה $f : \R \to \R$ קיימות פונקציה זוגית $g$ ופונקציה אי־זוגית $h$ כך ש־$f = g + h$.
+
+\textbf{פתרון:}
+נגדיר:
+\[
+g(x) = \frac{f(x) + f(-x)}{2}, \quad h(x) = \frac{f(x) - f(-x)}{2}
+\]
+
+נבדוק:
+\begin{itemize}
+    \item $g(-x) = \frac{f(-x) + f(x)}{2} = g(x)$ — זוגית
+    \item $h(-x) = \frac{f(-x) - f(x)}{2} = -h(x)$ — אי־זוגית
+    \item $g(x) + h(x) = \frac{f(x) + f(-x) + f(x) - f(-x)}{2} = f(x)$ $\blacksquare$
+\end{itemize}
+\end{exercisebox}

@@ -1,0 +1,139 @@
+% פרק 6: גבולות של פונקציות
+\chapter{גבולות של פונקציות}
+
+\section{הגדרת גבול}
+
+\begin{defbox}
+\textbf{הגדרה 6.1 (גבול של פונקציה — הגדרת $\eps$-$\delta$).}
+יהי $x_0$ נקודת צבירה של $D$. נאמר ש־$\limx{x_0} f(x) = L$ אם:
+\[
+\boxed{\forall \eps > 0 \; \exists \delta > 0 \; \forall x \in D : 0 < |x - x_0| < \delta \Rightarrow |f(x) - L| < \eps}
+\]
+\end{defbox}
+
+\begin{defbox}
+\textbf{הגדרה 6.2 (גבול — הגדרת היינה).}
+$\limx{x_0} f(x) = L$ אם לכל סדרה $(x_n)$ בתחום עם $x_n \neq x_0$ ו־$x_n \to x_0$ מתקיים $f(x_n) \to L$.
+\end{defbox}
+
+\begin{thmbox}
+\textbf{משפט 6.3 (שקילות ההגדרות).}
+הגדרת $\eps$-$\delta$ והגדרת היינה שקולות.
+\end{thmbox}
+
+\begin{exbox}
+\textbf{דוגמה 1.} הוכיחו כי $\limx{2} (3x - 1) = 5$.
+
+\textbf{פתרון:}
+יהי $\eps > 0$. צ"ל: קיים $\delta > 0$ כך שאם $0 < |x - 2| < \delta$ אז $|(3x-1) - 5| < \eps$.
+
+$|(3x-1) - 5| = |3x - 6| = 3|x - 2|$.
+
+נבחר $\delta = \frac{\eps}{3}$.
+
+אם $|x - 2| < \delta = \frac{\eps}{3}$ אז $|3x - 6| = 3|x-2| < 3 \cdot \frac{\eps}{3} = \eps$. $\blacksquare$
+\end{exbox}
+
+\begin{exbox}
+\textbf{דוגמה 2.} הוכיחו כי $\limx{0} \frac{\sin x}{x} = 1$.
+
+\textbf{פתרון (רעיון):}
+מאי־שוויון גיאומטרי: לכל $0 < |x| < \frac{\pi}{2}$:
+\[
+\cos x < \frac{\sin x}{x} < 1
+\]
+
+כיוון ש־$\cos x \to 1$ כש־$x \to 0$, לפי כלל הסנדוויץ': $\frac{\sin x}{x} \to 1$. $\blacksquare$
+\end{exbox}
+
+\section{אריתמטיקה של גבולות}
+
+\begin{thmbox}
+\textbf{משפט 6.4 (אריתמטיקה של גבולות).}
+אם $\limx{x_0} f(x) = L$ ו־$\limx{x_0} g(x) = M$ אז:
+\begin{enumerate}
+    \item $\limx{x_0} (f(x) + g(x)) = L + M$
+    \item $\limx{x_0} (f(x) \cdot g(x)) = L \cdot M$
+    \item $\limx{x_0} \frac{f(x)}{g(x)} = \frac{L}{M}$ (אם $M \neq 0$)
+\end{enumerate}
+\end{thmbox}
+
+\begin{thmbox}
+\textbf{משפט 6.5 (כלל הסנדוויץ').}
+אם $f(x) \le g(x) \le h(x)$ בסביבה מנוקבת של $x_0$, ו־$\limx{x_0} f(x) = \limx{x_0} h(x) = L$, אז $\limx{x_0} g(x) = L$.
+\end{thmbox}
+
+\section{גבולות חד־צדדיים}
+
+\begin{defbox}
+\textbf{הגדרה 6.6 (גבולות חד־צדדיים).}
+\begin{itemize}
+    \item \textbf{גבול מימין:} $\limx{x_0^+} f(x) = L$ אם $\forall \eps > 0 \; \exists \delta > 0 : x_0 < x < x_0 + \delta \Rightarrow |f(x) - L| < \eps$
+    \item \textbf{גבול משמאל:} $\limx{x_0^-} f(x) = L$ אם $\forall \eps > 0 \; \exists \delta > 0 : x_0 - \delta < x < x_0 \Rightarrow |f(x) - L| < \eps$
+\end{itemize}
+\end{defbox}
+
+\begin{thmbox}
+\textbf{טענה 6.7.}
+$\limx{x_0} f(x) = L$ אם ורק אם $\limx{x_0^+} f(x) = \limx{x_0^-} f(x) = L$.
+\end{thmbox}
+
+\section{גבולות באינסוף}
+
+\begin{defbox}
+\textbf{הגדרה 6.8.}
+$\limx{\infty} f(x) = L$ אם $\forall \eps > 0 \; \exists M > 0 : x > M \Rightarrow |f(x) - L| < \eps$.
+\end{defbox}
+
+\begin{defbox}
+\textbf{הגדרה 6.9.}
+$\limx{x_0} f(x) = \infty$ אם $\forall K > 0 \; \exists \delta > 0 : 0 < |x - x_0| < \delta \Rightarrow f(x) > K$.
+\end{defbox}
+
+\section{גבולות חשובים}
+
+\begin{thmbox}
+\textbf{טענה 6.10 (גבולות חשובים).}
+\begin{enumerate}
+    \item $\limx{0} \frac{\sin x}{x} = 1$
+    \item $\limx{0} \frac{1 - \cos x}{x^2} = \frac{1}{2}$
+    \item $\limx{0} \frac{e^x - 1}{x} = 1$
+    \item $\limx{0} \frac{\ln(1+x)}{x} = 1$
+    \item $\limx{0} \frac{(1+x)^a - 1}{x} = a$
+    \item $\limx{\infty} \left(1 + \frac{1}{x}\right)^x = e$
+    \item $\limx{0} (1 + x)^{1/x} = e$
+\end{enumerate}
+\end{thmbox}
+
+\section{תרגילים}
+
+\begin{exercisebox}
+\textbf{תרגיל 1.}
+חשבו $\limx{0} \frac{\tan x - \sin x}{x^3}$.
+
+\textbf{פתרון:}
+\[
+\frac{\tan x - \sin x}{x^3} = \frac{\sin x(\frac{1}{\cos x} - 1)}{x^3} = \frac{\sin x}{x} \cdot \frac{1 - \cos x}{x^2 \cos x}
+\]
+
+כש־$x \to 0$:
+\[
+\frac{\sin x}{x} \to 1, \quad \frac{1 - \cos x}{x^2} \to \frac{1}{2}, \quad \cos x \to 1
+\]
+
+לכן הגבול הוא $1 \cdot \frac{1/2}{1} = \frac{1}{2}$. $\blacksquare$
+\end{exercisebox}
+
+\begin{exercisebox}
+\textbf{תרגיל 2.}
+חשבו $\limx{\infty} \left(\frac{x+1}{x-1}\right)^x$.
+
+\textbf{פתרון:}
+\[
+\left(\frac{x+1}{x-1}\right)^x = \left(1 + \frac{2}{x-1}\right)^x = \left[\left(1 + \frac{2}{x-1}\right)^{(x-1)/2}\right]^{2x/(x-1)}
+\]
+
+כש־$x \to \infty$: $(1 + \frac{2}{x-1})^{(x-1)/2} \to e$ ו־$\frac{2x}{x-1} \to 2$.
+
+לכן הגבול הוא $e^2$. $\blacksquare$
+\end{exercisebox}

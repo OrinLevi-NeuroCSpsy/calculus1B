@@ -1,0 +1,387 @@
+% פרק 3: סדרות
+\chapter{סדרות}
+
+\section{מושגים בסיסיים}
+
+\begin{defbox}
+\textbf{הגדרה 3.1 (סדרה).}
+\textbf{סדרה} (של מספרים ממשיים) היא פונקציה $a : \N \to \R$.
+
+במקום $a(n)$ נכתוב $a_n$ ונסמן את הסדרה ב־$(a_n)_{n=0}^{\infty}$ או $(a_n)$.
+\end{defbox}
+
+\begin{defbox}
+\textbf{הגדרה 3.2 (חסימות).}
+סדרה $(a_n)$ נקראת:
+\begin{itemize}
+    \item \textbf{חסומה מלעיל} אם קיים $M \in \R$ כך שלכל $n$: $a_n \le M$
+    \item \textbf{חסומה מלרע} אם קיים $m \in \R$ כך שלכל $n$: $a_n \ge m$
+    \item \textbf{חסומה} אם היא חסומה מלעיל ומלרע (שקול: קיים $M > 0$ כך ש־$|a_n| \le M$ לכל $n$)
+\end{itemize}
+\end{defbox}
+
+\begin{defbox}
+\textbf{הגדרה 3.3 (מונוטוניות).}
+סדרה $(a_n)$ נקראת:
+\begin{itemize}
+    \item \textbf{עולה (מונוטונית)}: $a_n \le a_{n+1}$ לכל $n$
+    \item \textbf{עולה ממש}: $a_n < a_{n+1}$ לכל $n$
+    \item \textbf{יורדת (מונוטונית)}: $a_n \ge a_{n+1}$ לכל $n$
+    \item \textbf{יורדת ממש}: $a_n > a_{n+1}$ לכל $n$
+\end{itemize}
+\end{defbox}
+
+\section{גבול של סדרה}
+
+\begin{defbox}
+\textbf{הגדרה 3.4 (גבול של סדרה).}
+יהי $L \in \R$. נאמר כי הסדרה $(a_n)$ \textbf{מתכנסת ל־$L$} (או $L$ הוא \textbf{גבול} הסדרה) ונכתוב $\limn a_n = L$ או $a_n \to L$, אם:
+\[
+\boxed{\forall \eps > 0 \; \exists N \in \N \; \forall n > N : |a_n - L| < \eps}
+\]
+סדרה שאינה מתכנסת נקראת \textbf{מתבדרת}.
+\end{defbox}
+
+\begin{notebox}
+\textbf{פירוש אינטואיטיבי.}
+$\limn a_n = L$ אם לכל "סביבה" של $L$ (קטע $(L-\eps, L+\eps)$), כמעט כל איברי הסדרה נמצאים בסביבה זו (כלומר, רק מספר סופי של איברים מחוץ לה).
+\end{notebox}
+
+\begin{thmbox}
+\textbf{טענה 3.5 (יחידות הגבול).}
+אם $(a_n)$ מתכנסת, אז הגבול שלה יחיד.
+\end{thmbox}
+
+\begin{proofbox}
+\textbf{הוכחה.}
+נניח $a_n \to L$ וגם $a_n \to L'$ עם $L \neq L'$.
+
+נבחר $\eps = \frac{|L - L'|}{2} > 0$.
+
+קיים $N_1$ כך שלכל $n > N_1$: $|a_n - L| < \eps$.
+
+קיים $N_2$ כך שלכל $n > N_2$: $|a_n - L'| < \eps$.
+
+עבור $n > \max(N_1, N_2)$:
+\[
+|L - L'| \le |L - a_n| + |a_n - L'| < \eps + \eps = 2\eps = |L - L'|
+\]
+סתירה! $\blacksquare$
+\end{proofbox}
+
+\begin{thmbox}
+\textbf{טענה 3.6 (סדרה מתכנסת חסומה).}
+כל סדרה מתכנסת היא חסומה.
+\end{thmbox}
+
+\begin{proofbox}
+\textbf{הוכחה.}
+תהי $a_n \to L$. עבור $\eps = 1$, קיים $N$ כך שלכל $n > N$: $|a_n - L| < 1$, כלומר $|a_n| < |L| + 1$.
+
+נגדיר $M = \max\{|a_0|, |a_1|, \ldots, |a_N|, |L| + 1\}$.
+
+אז $|a_n| \le M$ לכל $n \in \N$. $\blacksquare$
+\end{proofbox}
+
+\begin{exbox}
+\textbf{דוגמה 1.} הוכיחו כי $\limn \frac{1}{n} = 0$.
+
+\textbf{פתרון:}
+יהי $\eps > 0$. צ"ל: קיים $N$ כך שלכל $n > N$: $\left|\frac{1}{n} - 0\right| < \eps$.
+
+נבחר $N = \left\lfloor \frac{1}{\eps} \right\rfloor$.
+
+לכל $n > N$: $n > \frac{1}{\eps}$, לכן $\frac{1}{n} < \eps$, כלומר $\left|\frac{1}{n}\right| < \eps$. $\blacksquare$
+\end{exbox}
+
+\begin{exbox}
+\textbf{דוגמה 2.} הוכיחו כי $\limn \frac{n+1}{n} = 1$.
+
+\textbf{פתרון:}
+\[
+\left|\frac{n+1}{n} - 1\right| = \left|\frac{1}{n}\right| = \frac{1}{n}
+\]
+יהי $\eps > 0$. נבחר $N = \left\lfloor \frac{1}{\eps} \right\rfloor$.
+
+לכל $n > N$: $\frac{1}{n} < \eps$. $\blacksquare$
+\end{exbox}
+
+\section{אריתמטיקה של גבולות}
+
+\begin{thmbox}
+\textbf{משפט 3.7 (אריתמטיקה של גבולות).}
+יהיו $(a_n)$, $(b_n)$ סדרות מתכנסות עם $a_n \to L$ ו־$b_n \to M$. אז:
+\begin{enumerate}
+    \item $\limn (a_n + b_n) = L + M$
+    \item $\limn (a_n - b_n) = L - M$
+    \item $\limn (a_n \cdot b_n) = L \cdot M$
+    \item $\limn (c \cdot a_n) = c \cdot L$ לכל $c \in \R$
+    \item אם $M \neq 0$ אז $\limn \frac{a_n}{b_n} = \frac{L}{M}$
+\end{enumerate}
+\end{thmbox}
+
+\begin{proofbox}
+\textbf{הוכחה (מכפלה).}
+\[
+|a_n b_n - LM| = |a_n b_n - a_n M + a_n M - LM| \le |a_n||b_n - M| + |M||a_n - L|
+\]
+
+כיוון ש־$(a_n)$ מתכנסת, היא חסומה: קיים $K$ כך ש־$|a_n| \le K$ לכל $n$.
+
+יהי $\eps > 0$. קיים $N_1$ כך שלכל $n > N_1$: $|a_n - L| < \frac{\eps}{2(|M|+1)}$.
+
+קיים $N_2$ כך שלכל $n > N_2$: $|b_n - M| < \frac{\eps}{2K}$.
+
+לכל $n > \max(N_1, N_2)$:
+\[
+|a_n b_n - LM| \le K \cdot \frac{\eps}{2K} + |M| \cdot \frac{\eps}{2(|M|+1)} < \frac{\eps}{2} + \frac{\eps}{2} = \eps \quad \blacksquare
+\]
+\end{proofbox}
+
+\begin{thmbox}
+\textbf{משפט 3.8 (כלל הסנדוויץ').}
+יהיו $(a_n)$, $(b_n)$, $(c_n)$ סדרות. אם:
+\begin{enumerate}
+    \item $a_n \le b_n \le c_n$ לכל $n$ גדול מספיק
+    \item $\limn a_n = \limn c_n = L$
+\end{enumerate}
+אז $\limn b_n = L$.
+\end{thmbox}
+
+\begin{proofbox}
+\textbf{הוכחה.}
+יהי $\eps > 0$. קיים $N_1$ כך שלכל $n > N_1$: $|a_n - L| < \eps$, כלומר $L - \eps < a_n$.
+
+קיים $N_2$ כך שלכל $n > N_2$: $|c_n - L| < \eps$, כלומר $c_n < L + \eps$.
+
+קיים $N_3$ כך שלכל $n > N_3$: $a_n \le b_n \le c_n$.
+
+לכל $n > \max(N_1, N_2, N_3)$:
+\[
+L - \eps < a_n \le b_n \le c_n < L + \eps
+\]
+לכן $|b_n - L| < \eps$. $\blacksquare$
+\end{proofbox}
+
+\begin{exbox}
+\textbf{דוגמה.} חשבו $\limn \frac{\sin n}{n}$.
+
+\textbf{פתרון:}
+$-1 \le \sin n \le 1$, לכן $-\frac{1}{n} \le \frac{\sin n}{n} \le \frac{1}{n}$.
+
+כיוון ש־$\limn \frac{1}{n} = \limn \left(-\frac{1}{n}\right) = 0$, לפי כלל הסנדוויץ': $\limn \frac{\sin n}{n} = 0$. $\blacksquare$
+\end{exbox}
+
+\section{משפט המונוטוניות}
+
+\begin{thmbox}
+\textbf{משפט 3.9 (התכנסות סדרה מונוטונית חסומה).}
+\begin{enumerate}
+    \item סדרה \textbf{עולה וחסומה מלעיל} מתכנסת, וגבולה הוא $\sup\{a_n : n \in \N\}$.
+    \item סדרה \textbf{יורדת וחסומה מלרע} מתכנסת, וגבולה הוא $\inf\{a_n : n \in \N\}$.
+\end{enumerate}
+\end{thmbox}
+
+\begin{proofbox}
+\textbf{הוכחה (סעיף 1).}
+תהי $(a_n)$ עולה וחסומה מלעיל. נגדיר $L = \sup\{a_n : n \in \N\}$ (קיים לפי אקסיומת השלמות).
+
+יהי $\eps > 0$. לפי אפיון הסופרימום, קיים $N \in \N$ כך ש־$a_N > L - \eps$.
+
+כיוון שהסדרה עולה, לכל $n > N$: $a_n \ge a_N > L - \eps$.
+
+וכיוון ש־$L$ חסם מלעיל: $a_n \le L < L + \eps$.
+
+לכן $|a_n - L| < \eps$ לכל $n > N$. $\blacksquare$
+\end{proofbox}
+
+\section{גבולות שימושיים}
+
+\begin{thmbox}
+\textbf{טענה 3.10 (גבולות חשובים).}
+\begin{enumerate}
+    \item $\limn \frac{1}{n^k} = 0$ לכל $k > 0$
+    \item $\limn \sqrt[n]{n} = 1$
+    \item $\limn \sqrt[n]{a} = 1$ לכל $a > 0$
+    \item $\limn q^n = 0$ לכל $|q| < 1$
+    \item $\limn \frac{a^n}{n!} = 0$ לכל $a \in \R$
+    \item $\limn \frac{n^k}{a^n} = 0$ לכל $k \in \N$ ו־$a > 1$
+\end{enumerate}
+\end{thmbox}
+
+\begin{proofbox}
+\textbf{הוכחה ($\limn \sqrt[n]{n} = 1$).}
+נכתוב $\sqrt[n]{n} = 1 + h_n$ כאשר $h_n \ge 0$ (כי $\sqrt[n]{n} \ge 1$ לכל $n \ge 1$).
+
+אז $n = (1 + h_n)^n \ge 1 + \binom{n}{2}h_n^2 = 1 + \frac{n(n-1)}{2}h_n^2$ (מאי־שוויון ברנולי המורחב).
+
+לכן $h_n^2 \le \frac{2(n-1)}{n(n-1)} = \frac{2}{n}$, ומכאן $0 \le h_n \le \sqrt{\frac{2}{n}} \to 0$.
+
+לפי כלל הסנדוויץ': $h_n \to 0$, לכן $\sqrt[n]{n} = 1 + h_n \to 1$. $\blacksquare$
+\end{proofbox}
+
+\section{המספר $e$}
+
+\begin{thmbox}
+\textbf{משפט 3.11.}
+הסדרה $a_n = \left(1 + \frac{1}{n}\right)^n$ מתכנסת.
+
+גבולה מוגדר כ־\textbf{המספר $e$}:
+\[
+\boxed{e = \limn \left(1 + \frac{1}{n}\right)^n \approx 2.71828...}
+\]
+\end{thmbox}
+
+\begin{proofbox}
+\textbf{הוכחה (רעיון).}
+מראים ש־$(a_n)$ עולה וחסומה מלעיל (על ידי $3$).
+
+\textbf{עולה:} משתמשים באי־שוויון בין ממוצע חשבוני לגיאומטרי.
+
+\textbf{חסומה:} $\left(1 + \frac{1}{n}\right)^n < 3$ לכל $n$. $\blacksquare$
+\end{proofbox}
+
+\begin{thmbox}
+\textbf{טענה 3.12.}
+מתקיים גם:
+\[
+e = \limn \left(1 + \frac{1}{n}\right)^n = \limn \left(1 - \frac{1}{n}\right)^{-n}
+\]
+ובאופן כללי, לכל סדרה $a_n \to \infty$:
+\[
+\limn \left(1 + \frac{1}{a_n}\right)^{a_n} = e
+\]
+\end{thmbox}
+
+\section{סדרות קושי}
+
+\begin{defbox}
+\textbf{הגדרה 3.13 (סדרת קושי).}
+סדרה $(a_n)$ נקראת \textbf{סדרת קושי} אם:
+\[
+\forall \eps > 0 \; \exists N \in \N \; \forall m, n > N : |a_m - a_n| < \eps
+\]
+\end{defbox}
+
+\begin{thmbox}
+\textbf{משפט 3.14 (קריטריון קושי להתכנסות).}
+סדרה מתכנסת אם ורק אם היא סדרת קושי.
+\end{thmbox}
+
+\begin{proofbox}
+\textbf{הוכחה ($\Rightarrow$).}
+תהי $a_n \to L$. יהי $\eps > 0$.
+
+קיים $N$ כך שלכל $n > N$: $|a_n - L| < \frac{\eps}{2}$.
+
+לכל $m, n > N$:
+\[
+|a_m - a_n| \le |a_m - L| + |L - a_n| < \frac{\eps}{2} + \frac{\eps}{2} = \eps \quad \blacksquare
+\]
+\end{proofbox}
+
+\section{גבולות חלקיים, $\limsup$ ו־$\liminf$}
+
+\begin{defbox}
+\textbf{הגדרה 3.15 (תת־סדרה).}
+\textbf{תת־סדרה} של $(a_n)$ היא סדרה מהצורה $(a_{n_k})_{k=0}^{\infty}$ כאשר $n_0 < n_1 < n_2 < \cdots$ סדרה עולה ממש של אינדקסים.
+\end{defbox}
+
+\begin{defbox}
+\textbf{הגדרה 3.16 (גבול חלקי).}
+$L \in \R$ נקרא \textbf{גבול חלקי} של $(a_n)$ אם קיימת תת־סדרה $(a_{n_k})$ כך ש־$a_{n_k} \to L$.
+\end{defbox}
+
+\begin{thmbox}
+\textbf{משפט 3.17 (בולצאנו־ויירשטראס).}
+לכל סדרה חסומה יש תת־סדרה מתכנסת.
+\end{thmbox}
+
+\begin{defbox}
+\textbf{הגדרה 3.18 ($\limsup$ ו־$\liminf$).}
+תהי $(a_n)$ סדרה חסומה.
+\begin{itemize}
+    \item $\limsup_{n \to \infty} a_n$ הוא \textbf{הגבול החלקי הגדול ביותר} של $(a_n)$
+    \item $\liminf_{n \to \infty} a_n$ הוא \textbf{הגבול החלקי הקטן ביותר} של $(a_n)$
+\end{itemize}
+\end{defbox}
+
+\begin{thmbox}
+\textbf{טענה 3.19 (אפיון $\limsup$).}
+$L = \limsup a_n$ אם ורק אם:
+\begin{enumerate}
+    \item לכל $\eps > 0$ קיימים אינסוף אינדקסים $n$ כך ש־$a_n > L - \eps$
+    \item לכל $\eps > 0$ קיימים רק מספר סופי של אינדקסים $n$ כך ש־$a_n > L + \eps$
+\end{enumerate}
+\end{thmbox}
+
+\begin{thmbox}
+\textbf{טענה 3.20.}
+סדרה חסומה $(a_n)$ מתכנסת אם ורק אם $\limsup a_n = \liminf a_n$.
+
+במקרה זה $\limn a_n = \limsup a_n = \liminf a_n$.
+\end{thmbox}
+
+\section{תרגילים}
+
+\begin{exercisebox}
+\textbf{תרגיל 1.}
+חשבו $\limn \frac{2n^2 + 3n - 1}{5n^2 - n + 2}$.
+
+\textbf{פתרון:}
+\[
+\frac{2n^2 + 3n - 1}{5n^2 - n + 2} = \frac{n^2(2 + \frac{3}{n} - \frac{1}{n^2})}{n^2(5 - \frac{1}{n} + \frac{2}{n^2})} = \frac{2 + \frac{3}{n} - \frac{1}{n^2}}{5 - \frac{1}{n} + \frac{2}{n^2}} \to \frac{2 + 0 - 0}{5 - 0 + 0} = \frac{2}{5} \quad \blacksquare
+\]
+\end{exercisebox}
+
+\begin{exercisebox}
+\textbf{תרגיל 2.}
+הוכיחו כי הסדרה $a_n = \frac{n!}{n^n}$ מתכנסת ומצאו את גבולה.
+
+\textbf{פתרון:}
+נבדוק מונוטוניות:
+\[
+\frac{a_{n+1}}{a_n} = \frac{(n+1)!}{(n+1)^{n+1}} \cdot \frac{n^n}{n!} = \frac{n+1}{(n+1)^{n+1}} \cdot n^n = \frac{n^n}{(n+1)^n} = \left(\frac{n}{n+1}\right)^n = \left(1 - \frac{1}{n+1}\right)^n
+\]
+
+עבור $n$ גדול מספיק: $\left(1 - \frac{1}{n+1}\right)^n < 1$ (כי $\left(1 - \frac{1}{n+1}\right)^{n+1} \to \frac{1}{e} < 1$).
+
+לכן הסדרה יורדת (מ־$n$ מסוים). היא גם חסומה מלרע (על ידי $0$).
+
+לכן מתכנסת. נסמן $L = \limn a_n$.
+
+מהיחס: $L = L \cdot \frac{1}{e}$, כלומר $L(1 - \frac{1}{e}) = 0$, לכן $L = 0$. $\blacksquare$
+\end{exercisebox}
+
+\begin{exercisebox}
+\textbf{תרגיל 3.}
+חשבו $\limn \left(1 + \frac{2}{n}\right)^n$.
+
+\textbf{פתרון:}
+\[
+\left(1 + \frac{2}{n}\right)^n = \left[\left(1 + \frac{1}{n/2}\right)^{n/2}\right]^2 \to e^2 \quad \blacksquare
+\]
+\end{exercisebox}
+
+\begin{exercisebox}
+\textbf{תרגיל 4.}
+תהי $(a_n)$ סדרה המקיימת $a_{n+1} = \frac{1}{2}(a_n + \frac{2}{a_n})$ עם $a_1 = 2$.
+
+הוכיחו כי הסדרה מתכנסת ומצאו את גבולה.
+
+\textbf{פתרון:}
+\textbf{שלב 1:} $a_n > 0$ לכל $n$ (באינדוקציה).
+
+\textbf{שלב 2:} $a_n \ge \sqrt{2}$ לכל $n \ge 2$.
+
+$a_{n+1} = \frac{a_n^2 + 2}{2a_n} \ge \sqrt{2}$ (מאי־שוויון AM-GM: $\frac{a_n^2 + 2}{2} \ge \sqrt{a_n^2 \cdot 2} = a_n\sqrt{2}$).
+
+\textbf{שלב 3:} הסדרה יורדת (מ־$n = 2$):
+\[
+a_{n+1} - a_n = \frac{a_n^2 + 2 - 2a_n^2}{2a_n} = \frac{2 - a_n^2}{2a_n} \le 0 \text{ (כי } a_n \ge \sqrt{2}\text{)}
+\]
+
+\textbf{שלב 4:} הסדרה יורדת וחסומה מלרע, לכן מתכנסת.
+
+נסמן $L = \limn a_n$. מהנוסחה: $L = \frac{1}{2}(L + \frac{2}{L})$, לכן $2L = L + \frac{2}{L}$, $L^2 = 2$, $L = \sqrt{2}$. $\blacksquare$
+\end{exercisebox}
