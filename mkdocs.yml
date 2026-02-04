@@ -80,11 +80,10 @@ nav:
   - חלק IV - גזירות:
     - פרק 8 - גזירות ולופיטל וטיילור: chapters/chapter8.md
   - חלק V - אינטגרלים:
-    - פרק 9 - פונקציות קדומות: units/unit1.md
-    - פרק 10 - אינטגרל רימן: units/unit2.md
-    - פרק 11 - המשפט היסודי: units/unit3.md
-    - שיטות אינטגרציה: units/unit4.md
-    - אינטגרלים לא אמיתיים: units/unit5.md
+    - פרק 9 - פונקציות קדומות: chapters/chapter9.md
+    - פרק 10 - אינטגרל רימן: chapters/chapter10.md
+    - פרק 11 - המשפט היסודי: chapters/chapter11.md
+    - פרק 12 - אינטגרלים לא אמיתיים: chapters/chapter12.md
   - עזר:
     - דף נוסחאות: formula_sheet.md
     - מיפוי החומר הרשמי: official_material_mapping.md
