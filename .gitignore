@@ -59,6 +59,9 @@ venv/
 .idea/
 *.code-workspace
 
+# Agent / local notes
+agent/
+
 # TeXShop
 .texshop/
 
