@@ -10,29 +10,31 @@
       
       
       
-        <link rel="canonical" href="https://orinlevi.github.io/calculus1B/official_material_mapping/">
+        <link rel="canonical" href="https://orinlevi.github.io/calculus1B/chapters/chapter5/">
       
       
-        <link rel="prev" href="../formula_sheet/">
+        <link rel="prev" href="../chapter4/">
       
+      
+        <link rel="next" href="../chapter6/">
       
       
         
       
       
-      <link rel="icon" href="../assets/logo.png">
+      <link rel="icon" href="../../assets/logo.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>מיפוי החומר הרשמי - חשבון אינפיניטסימלי 1ב</title>
+        <title>פרק 5 - פונקציות - חשבון אינפיניטסימלי 1ב</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -51,9 +53,9 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#5" class="md-skip">
           לדלג לתוכן
         </a>
       
@@ -94,9 +96,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="כותרת עליונה">
-    <a href=".." title="חשבון אינפיניטסימלי 1ב" class="md-header__button md-logo" aria-label="חשבון אינפיניטסימלי 1ב" data-md-component="logo">
+    <a href="../.." title="חשבון אינפיניטסימלי 1ב" class="md-header__button md-logo" aria-label="חשבון אינפיניטסימלי 1ב" data-md-component="logo">
       
-  <img src="../assets/logo.png" alt="logo">
+  <img src="../../assets/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -113,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              מיפוי החומר הרשמי
+              פרק 5 - פונקציות
             
           </span>
         </div>
@@ -229,9 +231,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="ניווט" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="חשבון אינפיניטסימלי 1ב" class="md-nav__button md-logo" aria-label="חשבון אינפיניטסימלי 1ב" data-md-component="logo">
+    <a href="../.." title="חשבון אינפיניטסימלי 1ב" class="md-nav__button md-logo" aria-label="חשבון אינפיניטסימלי 1ב" data-md-component="logo">
       
-  <img src="../assets/logo.png" alt="logo">
+  <img src="../../assets/logo.png" alt="logo">
 
     </a>
     חשבון אינפיניטסימלי 1ב
@@ -258,7 +260,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -339,7 +341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapters/chapter1/" class="md-nav__link">
+      <a href="../chapter1/" class="md-nav__link">
         
   
   
@@ -367,7 +369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapters/chapter2/" class="md-nav__link">
+      <a href="../chapter2/" class="md-nav__link">
         
   
   
@@ -456,7 +458,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapters/chapter3/" class="md-nav__link">
+      <a href="../chapter3/" class="md-nav__link">
         
   
   
@@ -484,7 +486,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapters/chapter4/" class="md-nav__link">
+      <a href="../chapter4/" class="md-nav__link">
         
   
   
@@ -516,8 +518,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -528,13 +532,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
@@ -555,7 +557,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -570,10 +572,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../chapters/chapter5/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    פרק 5 - פונקציות
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -589,6 +618,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      תוכן העניינים
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 הגדרות בסיסיות
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 פונקציות אלמנטריות
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 פונקציות מיוחדות
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        תרגילים
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -601,7 +694,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapters/chapter6/" class="md-nav__link">
+      <a href="../chapter6/" class="md-nav__link">
         
   
   
@@ -629,7 +722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapters/chapter7/" class="md-nav__link">
+      <a href="../chapter7/" class="md-nav__link">
         
   
   
@@ -718,7 +811,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapters/chapter8/" class="md-nav__link">
+      <a href="../chapter8/" class="md-nav__link">
         
   
   
@@ -807,7 +900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../units/unit1/" class="md-nav__link">
+      <a href="../../units/unit1/" class="md-nav__link">
         
   
   
@@ -835,7 +928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../units/unit2/" class="md-nav__link">
+      <a href="../../units/unit2/" class="md-nav__link">
         
   
   
@@ -863,7 +956,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../units/unit3/" class="md-nav__link">
+      <a href="../../units/unit3/" class="md-nav__link">
         
   
   
@@ -891,7 +984,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../units/unit4/" class="md-nav__link">
+      <a href="../../units/unit4/" class="md-nav__link">
         
   
   
@@ -919,7 +1012,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../units/unit5/" class="md-nav__link">
+      <a href="../../units/unit5/" class="md-nav__link">
         
   
   
@@ -951,8 +1044,6 @@
       
   
   
-    
-  
   
   
     
@@ -965,11 +1056,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
         
           
           <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
@@ -990,7 +1083,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1008,7 +1101,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../formula_sheet/" class="md-nav__link">
+      <a href="../../formula_sheet/" class="md-nav__link">
         
   
   
@@ -1033,37 +1126,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    מיפוי החומר הרשמי
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../official_material_mapping/" class="md-nav__link">
         
   
   
@@ -1079,59 +1145,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      תוכן העניינים
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#official_material" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        קבצי מקור (official_material)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        מיפוי תרגולים → יחידות (הצעה)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        איך למלא תוכן
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1171,10 +1184,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#official_material" class="md-nav__link">
+  <a href="#51" class="md-nav__link">
     <span class="md-ellipsis">
       
-        קבצי מקור (official_material)
+        5.1 הגדרות בסיסיות
       
     </span>
   </a>
@@ -1182,10 +1195,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#52" class="md-nav__link">
     <span class="md-ellipsis">
       
-        מיפוי תרגולים → יחידות (הצעה)
+        5.2 פונקציות אלמנטריות
       
     </span>
   </a>
@@ -1193,10 +1206,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#53" class="md-nav__link">
     <span class="md-ellipsis">
       
-        איך למלא תוכן
+        5.3 פונקציות מיוחדות
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        תרגילים
       
     </span>
   </a>
@@ -1223,87 +1247,69 @@
   
 
 
-<h1 id="_1">מיפוי החומר הרשמי → מבנה הפרויקט<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>קובץ זה ממפה את קבצי <code>official_material</code> ליחידות ולעמודים בפרויקט, כדי שתוכל למלא את הסיכום לפי המקור.</p>
-<h2 id="official_material">קבצי מקור (official_material)<a class="headerlink" href="#official_material" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>קובץ</th>
-<th>שימוש מומלץ בפרויקט</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>calculus1B-notes.pdf</strong> / <strong>calculus1B-notes-(English).pdf</strong></td>
-<td>תוכן עיקרי לכל היחידות — הרצאות, הגדרות, משפטים, דוגמאות</td>
-</tr>
-<tr>
-<td><strong>calculus1B-extended_formula_sheet.pdf</strong></td>
-<td><a href="../formula_sheet/">דף נוסחאות</a> — העתקת נוסחאות לסיכום</td>
-</tr>
-<tr>
-<td><strong>calculus1B-recitations_1-13.pdf</strong></td>
-<td>תרגולים 1–13 — דוגמאות ופתרונות לפי יחידות (ראה טבלה למטה)</td>
-</tr>
-<tr>
-<td><strong>calculus1B-HW_sol_2-11.pdf.pdf</strong></td>
-<td>פתרונות תרגילים — ניתן להוסיף סעיף "תרגילים נבחרים" ביחידות או דף נפרד</td>
-</tr>
-<tr>
-<td><strong>Intro_work_-_Sol-1.pdf</strong></td>
-<td>תרגילי מבוא — רלוונטי ל<a href="../units/unit1/">יחידה 1</a> (אינטגרל לא מסוים)</td>
-</tr>
-<tr>
-<td><strong>exams/</strong> (מבחנים A, B, C, Sample)</td>
-<td>תרגול למבחן — ניתן לדף "מבחנים" או דוגמאות ביחידות</td>
-</tr>
-<tr>
-<td><strong>mid_exams/</strong> (Midterm, Midterm-Example)</td>
-<td>מבחן אמצע — תרגול ורעיונות חוזרים</td>
-</tr>
-</tbody>
-</table>
-<h2 id="_2">מיפוי תרגולים → יחידות (הצעה)<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>תרגולים</th>
-<th>יחידה בפרויקט</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1–2</td>
-<td><a href="../units/unit1/">יחידה 1: אינטגרלים – מבוא ואינטגרל לא מסוים</a></td>
-</tr>
-<tr>
-<td>3–4</td>
-<td><a href="../units/unit2/">יחידה 2: אינטגרל מסוים וסכומי רימן</a></td>
-</tr>
-<tr>
-<td>5–6</td>
-<td><a href="../units/unit3/">יחידה 3: משפט היסוד של החדו"א</a></td>
-</tr>
-<tr>
-<td>7–9</td>
-<td><a href="../units/unit4/">יחידה 4: שיטות אינטגרציה</a></td>
-</tr>
-<tr>
-<td>10–13</td>
-<td><a href="../units/unit5/">יחידה 5: יישומים</a></td>
-</tr>
-</tbody>
-</table>
-<p><em>(אם בסילבוס הרשמי החלוקה שונה — עדכן לפי הסיכומים.)</em></p>
-<h2 id="_3">איך למלא תוכן<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h1 id="5">פרק 5: פונקציות במשתנה אחד<a class="headerlink" href="#5" title="Permanent link">&para;</a></h1>
+<h2 id="51">5.1 הגדרות בסיסיות<a class="headerlink" href="#51" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">הגדרה 5.1</p>
+<p><strong>פונקציה ממשית</strong> היא <span class="arithmatex">\(f : D \to \mathbb{R}\)</span> כאשר <span class="arithmatex">\(D \subseteq \mathbb{R}\)</span> <strong>תחום ההגדרה</strong>.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">הגדרה 5.2 (סוגי פונקציות)</p>
+<ul>
+<li><strong>חסומה מלעיל:</strong> קיים <span class="arithmatex">\(M\)</span> כך ש-<span class="arithmatex">\(f(x) \le M\)</span> לכל <span class="arithmatex">\(x \in D\)</span></li>
+<li><strong>חסומה מלרע:</strong> קיים <span class="arithmatex">\(m\)</span> כך ש-<span class="arithmatex">\(f(x) \ge m\)</span> לכל <span class="arithmatex">\(x \in D\)</span></li>
+<li><strong>עולה:</strong> <span class="arithmatex">\(x_1 &lt; x_2 \Rightarrow f(x_1) \le f(x_2)\)</span></li>
+<li><strong>עולה ממש:</strong> <span class="arithmatex">\(x_1 &lt; x_2 \Rightarrow f(x_1) &lt; f(x_2)\)</span></li>
+<li><strong>זוגית:</strong> <span class="arithmatex">\(f(-x) = f(x)\)</span></li>
+<li><strong>אי-זוגית:</strong> <span class="arithmatex">\(f(-x) = -f(x)\)</span></li>
+<li><strong>מחזורית:</strong> קיים <span class="arithmatex">\(T &gt; 0\)</span> כך ש-<span class="arithmatex">\(f(x + T) = f(x)\)</span></li>
+</ul>
+</div>
+<h2 id="52">5.2 פונקציות אלמנטריות<a class="headerlink" href="#52" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">הפונקציות האלמנטריות</p>
 <ol>
-<li><strong>להעתיק PDF:</strong> פתח את הקבצים ב־PDF, העתק טקסט (או השתמש ב־<code>pdftotext</code> במסוף) והדבק ב־Markdown או ב־LaTeX ביחידה המתאימה.</li>
-<li><strong>נוסחאות:</strong> בדף <a href="../formula_sheet/">דף נוסחאות</a> — העתק מ־<code>calculus1B-extended_formula_sheet.pdf</code> (ניתן להשתמש ב־MathJax/LaTeX בסוגריים <code>$...$</code> או <code>\[...\]</code>).</li>
-<li><strong>מבחנים:</strong> אם תרצה דף "מבחנים" — נוסיף קישור ב־<code>index.md</code> ו־<code>mkdocs.yml</code> אחרי שתחליט על המבנה.</li>
+<li><strong>פולינומים:</strong> <span class="arithmatex">\(p(x) = a_n x^n + \cdots + a_1 x + a_0\)</span></li>
+<li><strong>פונקציות רציונליות:</strong> <span class="arithmatex">\(\frac{p(x)}{q(x)}\)</span></li>
+<li><strong>טריגונומטריות:</strong> <span class="arithmatex">\(\sin, \cos, \tan, \cot\)</span></li>
+<li><strong>טריגונומטריות הפוכות:</strong> <span class="arithmatex">\(\arcsin, \arccos, \arctan\)</span></li>
+<li><strong>מעריכית:</strong> <span class="arithmatex">\(e^x\)</span>, <span class="arithmatex">\(a^x\)</span></li>
+<li><strong>לוגריתמית:</strong> <span class="arithmatex">\(\ln x\)</span>, <span class="arithmatex">\(\log_a x\)</span></li>
+<li><strong>חזקה כללית:</strong> <span class="arithmatex">\(x^a = e^{a \ln x}\)</span></li>
 </ol>
+</div>
+<h2 id="53">5.3 פונקציות מיוחדות<a class="headerlink" href="#53" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">פונקציית דיריכלה</p>
+<div class="arithmatex">\[D(x) = \begin{cases} 1 &amp; x \in \mathbb{Q} \\ 0 &amp; x \notin \mathbb{Q} \end{cases}\]</div>
+<p>פונקציה זו <strong>אינה רציפה בשום נקודה!</strong></p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">פונקציית הסימן</p>
+<div class="arithmatex">\[\text{sgn}(x) = \begin{cases} 1 &amp; x &gt; 0 \\ 0 &amp; x = 0 \\ -1 &amp; x &lt; 0 \end{cases}\]</div>
+</div>
+<div class="admonition info">
+<p class="admonition-title">פונקציית הרצפה</p>
+<div class="arithmatex">\[\lfloor x \rfloor = \max\{n \in \mathbb{Z} : n \le x\}\]</div>
+</div>
 <hr />
-<p><em>עודכן לפי מבנה calculus1B_LaTeX.</em></p>
+<h2 id="_1">תרגילים<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<div class="admonition question">
+<p class="admonition-title">תרגיל 1</p>
+<p>הוכיחו כי לכל <span class="arithmatex">\(f : \mathbb{R} \to \mathbb{R}\)</span> קיימות <span class="arithmatex">\(g\)</span> זוגית ו-<span class="arithmatex">\(h\)</span> אי-זוגית כך ש-<span class="arithmatex">\(f = g + h\)</span>.</p>
+</div>
+<details class="success">
+<summary>פתרון</summary>
+<p>נגדיר:
+$<span class="arithmatex">\(g(x) = \frac{f(x) + f(-x)}{2}, \quad h(x) = \frac{f(x) - f(-x)}{2}\)</span>$</p>
+<p><strong>בדיקה:</strong></p>
+<ul>
+<li><span class="arithmatex">\(g(-x) = \frac{f(-x) + f(x)}{2} = g(x)\)</span> — <strong>זוגית</strong> <span class="arithmatex">\(\checkmark\)</span></li>
+<li><span class="arithmatex">\(h(-x) = \frac{f(-x) - f(x)}{2} = -h(x)\)</span> — <strong>אי-זוגית</strong> <span class="arithmatex">\(\checkmark\)</span></li>
+<li><span class="arithmatex">\(g(x) + h(x) = \frac{f(x) + f(-x) + f(x) - f(-x)}{2} = f(x)\)</span> <span class="arithmatex">\(\checkmark\)</span></li>
+</ul>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
+</details>
 
 
 
@@ -1369,12 +1375,12 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tracking", "navigation.sections", "navigation.expand", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u05d4\u05d5\u05e2\u05ea\u05e7 \u05dc\u05dc\u05d5\u05d7", "clipboard.copy": "\u05d4\u05e2\u05ea\u05e7\u05d4 \u05dc\u05dc\u05d5\u05d7", "search.result.more.one": "\u05e2\u05d5\u05d3 \u05d0\u05d7\u05d3 \u05d1\u05d3\u05e3 \u05d4\u05d6\u05d4", "search.result.more.other": "\u05e2\u05d5\u05d3 # \u05d1\u05d3\u05e3 \u05d4\u05d6\u05d4", "search.result.none": "\u05d0\u05d9\u05df \u05de\u05e1\u05de\u05db\u05d9\u05dd \u05ea\u05d5\u05d0\u05de\u05d9\u05dd", "search.result.one": "\u05de\u05e1\u05de\u05da1 \u05ea\u05d5\u05d0\u05dd", "search.result.other": "# \u05de\u05e1\u05de\u05da \u05ea\u05d5\u05d0\u05dd", "search.result.placeholder": "\u05d9\u05e9 \u05dc\u05d4\u05e7\u05dc\u05d9\u05d3 \u05db\u05d3\u05d9 \u05dc\u05d4\u05ea\u05d7\u05d9\u05dc \u05dc\u05d7\u05e4\u05e9", "search.result.term.missing": "\u05d7\u05e1\u05e8", "select.version": "\u05d1\u05d7\u05d9\u05e8\u05ea \u05d2\u05e8\u05e1\u05d4"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tracking", "navigation.sections", "navigation.expand", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u05d4\u05d5\u05e2\u05ea\u05e7 \u05dc\u05dc\u05d5\u05d7", "clipboard.copy": "\u05d4\u05e2\u05ea\u05e7\u05d4 \u05dc\u05dc\u05d5\u05d7", "search.result.more.one": "\u05e2\u05d5\u05d3 \u05d0\u05d7\u05d3 \u05d1\u05d3\u05e3 \u05d4\u05d6\u05d4", "search.result.more.other": "\u05e2\u05d5\u05d3 # \u05d1\u05d3\u05e3 \u05d4\u05d6\u05d4", "search.result.none": "\u05d0\u05d9\u05df \u05de\u05e1\u05de\u05db\u05d9\u05dd \u05ea\u05d5\u05d0\u05de\u05d9\u05dd", "search.result.one": "\u05de\u05e1\u05de\u05da1 \u05ea\u05d5\u05d0\u05dd", "search.result.other": "# \u05de\u05e1\u05de\u05da \u05ea\u05d5\u05d0\u05dd", "search.result.placeholder": "\u05d9\u05e9 \u05dc\u05d4\u05e7\u05dc\u05d9\u05d3 \u05db\u05d3\u05d9 \u05dc\u05d4\u05ea\u05d7\u05d9\u05dc \u05dc\u05d7\u05e4\u05e9", "search.result.term.missing": "\u05d7\u05e1\u05e8", "select.version": "\u05d1\u05d7\u05d9\u05e8\u05ea \u05d2\u05e8\u05e1\u05d4"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
-        <script src="../javascripts/mathjax.js"></script>
+        <script src="../../javascripts/mathjax.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
