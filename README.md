@@ -4,7 +4,7 @@
 
 [![Deploy to GitHub Pages](https://github.com/orinlevi/calculus1B/actions/workflows/deploy.yml/badge.svg)](https://github.com/orinlevi/calculus1B/actions/workflows/deploy.yml)
 
-**[📖 צפה באתר](https://orinlevi.github.io/calculus1B/)**
+**[📖 צפה באתר](https://orinlevi-neurocspsy.github.io/calculus1B/)**
 
 ## מבנה הפרויקט
 
