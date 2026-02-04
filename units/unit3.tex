@@ -1,0 +1,309 @@
+% יחידה 3: משפט היסוד של החדו"א
+\section{משפט היסוד של החדו"א}
+
+יחידה זו עוסקת בקשר העמוק בין אינטגרציה וגזירה — המשפטים היסודיים של החשבון הדיפרנציאלי והאינטגרלי.
+
+% ===================================
+\subsection{אינטגרביליות מקומית}
+% ===================================
+
+\begin{defbox}
+\textbf{הגדרה 10.1 (אינטגרביליות מקומית).}
+יהי $I \subseteq \R$ קטע ותהי $f : I \to \R$ פונקציה. נאמר כי \textbf{$f$ אינטגרבילית מקומית על $I$} כאשר לכל $a,b \in I$ עם $a < b$ הפונקציה $f$ אינטגרבילית על $[a,b]$.
+\end{defbox}
+
+\begin{exbox}
+\textbf{דוגמה.}
+תהי $f : \R \to \R$ רציפה. אז $f$ אינטגרבילית מקומית על כל קטע, כי פונקציה רציפה בקטע סגור היא אינטגרבילית.
+\end{exbox}
+
+\begin{notebox}
+\textbf{מוסכמה.}
+אם $b < a$ אז נגדיר:
+\[
+\int_a^b f(x)\dx = -\int_b^a f(x)\dx
+\]
+\end{notebox}
+
+% ===================================
+\subsection{אינטגרל לא מסוים}
+% ===================================
+
+\begin{defbox}
+\textbf{הגדרה 10.2 (אינטגרל לא מסוים).}
+יהי $I$ קטע ותהי $f : I \to \R$ אינטגרבילית מקומית ב־$I$. פונקציה $F : I \to \R$ נקראת \textbf{אינטגרל לא מסוים של $f$} כאשר קיים $a \in I$ כך שמתקיים:
+\[
+F(x) = \int_a^x f(t)\dt \quad \text{לכל } x \in I
+\]
+\end{defbox}
+
+\begin{exercisebox}
+\textbf{תרגיל.}
+יהיו $F, G : I \to \R$ אינטגרלים לא מסוימים של $f$. הוכיחו כי קיים $c \in \R$ כך ש־$F(x) - G(x) = c$ לכל $x \in I$.
+\end{exercisebox}
+
+% ===================================
+\subsection{רציפות האינטגרל הלא מסוים}
+% ===================================
+
+\begin{thmbox}
+\textbf{טענה 10.3 (רציפות האינטגרל הלא מסוים).}
+יהי $I$ קטע, תהי $f : I \to \R$ אינטגרבילית מקומית, ויהי $F : I \to \R$ אינטגרל לא מסוים של $f$.
+\begin{enumerate}
+    \item $F$ \textbf{רציפה} ב־$I$.
+    \item אם בנוסף $f$ \textbf{חסומה} ב־$I$, אז $F$ היא \textbf{פונקציית ליפשיץ} (קיים $M > 0$ כך ש־$|F(x) - F(y)| \le M|x-y|$ לכל $x,y \in I$).
+\end{enumerate}
+\end{thmbox}
+
+\begin{proofbox}
+\textbf{הוכחה.}
+יהי $F(x) = \int_a^x f(t)\dt$. יהי $x_0 \in I$.
+
+\textbf{שלב 1:} כיוון ש־$f$ אינטגרבילית מקומית, קיים $\eta > 0$ כך ש־$f$ חסומה ב־$[x_0-\eta, x_0+\eta] \cap I$ על ידי $M > 0$.
+
+\textbf{שלב 2:} לכל $x$ עם $|x - x_0| < \eta$:
+\[
+|F(x) - F(x_0)| = \abs{\int_{x_0}^x f(t)\dt} \le M|x - x_0|
+\]
+
+\textbf{שלב 3:} נבחר $\delta = \min\parens{\eta, \frac{\eps}{M}}$. אז לכל $x$ עם $|x-x_0| < \delta$:
+\[
+|F(x) - F(x_0)| \le M \cdot |x-x_0| < M \cdot \frac{\eps}{M} = \eps
+\]
+לכן $F$ רציפה ב־$x_0$. \hfill $\blacksquare$
+\end{proofbox}
+
+% ===================================
+\subsection{המשפט היסודי הראשון}
+% ===================================
+
+\begin{thmbox}
+\textbf{טענה 10.4 (גזירות האינטגרל הלא מסוים).}
+יהי $I$ קטע, $x_0 \in I$, $f : I \to \R$ אינטגרבילית מקומית, ו־$F$ אינטגרל לא מסוים של $f$.
+
+\textbf{אם $f$ רציפה ב־$x_0$} אז \textbf{$F$ גזירה ב־$x_0$} ומתקיים:
+\[
+\boxed{F'(x_0) = f(x_0)}
+\]
+\end{thmbox}
+
+\begin{proofbox}
+\textbf{הוכחה.}
+יהי $\eps > 0$. כיוון ש־$f$ רציפה ב־$x_0$, קיים $\delta > 0$ כך שלכל $t$ עם $|t - x_0| < \delta$:
+\[
+|f(t) - f(x_0)| < \frac{\eps}{2}
+\]
+
+נבחן את המנה:
+\[
+\frac{F(x) - F(x_0)}{x - x_0} - f(x_0) = \frac{1}{x - x_0} \int_{x_0}^x f(t)\dt - f(x_0)
+\]
+
+נשתמש בכך ש־$f(x_0) = \frac{1}{x-x_0}\int_{x_0}^x f(x_0)\dt$:
+\[
+\frac{F(x) - F(x_0)}{x - x_0} - f(x_0) = \frac{1}{x - x_0} \int_{x_0}^x \parens{f(t) - f(x_0)}\dt
+\]
+
+לכל $|x - x_0| < \delta$:
+\[
+\abs{\frac{F(x) - F(x_0)}{x - x_0} - f(x_0)} \le \frac{1}{|x-x_0|} \cdot \frac{\eps}{2} \cdot |x-x_0| = \frac{\eps}{2} < \eps
+\]
+
+לכן $\limx{x_0} \frac{F(x) - F(x_0)}{x - x_0} = f(x_0)$, כלומר $F'(x_0) = f(x_0)$. \hfill $\blacksquare$
+\end{proofbox}
+
+% ===================================
+\subsection{המשפט היסודי של החשבון הדיפרנציאלי}
+% ===================================
+
+\begin{thmbox}
+\textbf{משפט 10.5 (המשפט היסודי של החשבון הדיפרנציאלי).}
+יהי $I$ קטע ותהי $f : I \to \R$.
+
+\textbf{אם $f$ רציפה} אז \textbf{קיימת ל־$f$ פונקציה קדומה ב־$I$}.
+\end{thmbox}
+
+\begin{proofbox}
+\textbf{הוכחה.}
+נבחר $a \in I$ ונגדיר:
+\[
+F(x) = \int_a^x f(t)\dt
+\]
+
+לפי טענה 10.4, בכל נקודה $x \in I$ (שם $f$ רציפה) מתקיים $F'(x) = f(x)$.
+
+לכן $F$ היא קדומה של $f$ ב־$I$. \hfill $\blacksquare$
+\end{proofbox}
+
+\begin{notebox}
+\textbf{משמעות המשפט.}
+המשפט קושר בין שני מושגים נפרדים לכאורה:
+\begin{itemize}
+    \item \textbf{גזירה} — מציאת קצב שינוי מקומי
+    \item \textbf{אינטגרציה} — מציאת שטח מצטבר
+\end{itemize}
+המשפט מראה שאינטגרציה היא הפעולה ההפוכה לגזירה!
+\end{notebox}
+
+% ===================================
+\subsection{נוסחת ניוטון־לייבניץ (המשפט היסודי השני)}
+% ===================================
+
+\begin{thmbox}
+\textbf{משפט 10.6 (נוסחת ניוטון־לייבניץ).}
+תהי $f : [a,b] \to \R$. \textbf{אם $f$ אינטגרבילית ובעלת קדומה ב־$[a,b]$} אז \textbf{לכל קדומה $F$ של $f$} מתקיים:
+\[
+\boxed{\int_a^b f(x)\dx = F(b) - F(a)}
+\]
+\end{thmbox}
+
+\begin{notebox}
+\textbf{סימון.}
+$F(b) - F(a) = \big[F(x)\big]_a^b$
+\end{notebox}
+
+\begin{proofbox}
+\textbf{הוכחה (רעיון).}
+\textbf{שלב 1:} בוחרים חלוקה $\Pi = \{x_0 = a, x_1, \ldots, x_n = b\}$ עם $\lambda(\Pi) < \delta$ כך שסכום רימן קרוב לאינטגרל.
+
+\textbf{שלב 2:} לפי משפט לגרנז', בכל תת־קטע $[x_i, x_{i+1}]$ קיים $\xi_i \in (x_i, x_{i+1})$ כך ש:
+\[
+F(x_{i+1}) - F(x_i) = F'(\xi_i)(x_{i+1} - x_i) = f(\xi_i)(x_{i+1} - x_i)
+\]
+
+\textbf{שלב 3:} סכימה:
+\[
+F(b) - F(a) = \sum_{i=0}^{n-1} \big[F(x_{i+1}) - F(x_i)\big] = \sum_{i=0}^{n-1} f(\xi_i)(x_{i+1} - x_i) = S(f, \Pi, \xi)
+\]
+
+\textbf{שלב 4:} בגבול $\lambda(\Pi) \to 0$, סכום רימן שואף לאינטגרל:
+\[
+F(b) - F(a) = \int_a^b f(x)\dx \quad \blacksquare
+\]
+\end{proofbox}
+
+% ===================================
+\subsection{דוגמאות לחישוב אינטגרלים}
+% ===================================
+
+\begin{exbox}
+\textbf{דוגמה 1.}
+\[
+\int_0^1 x\dx = \brackets{\frac{x^2}{2}}_0^1 = \frac{1}{2} - 0 = \frac{1}{2}
+\]
+\end{exbox}
+
+\begin{exbox}
+\textbf{דוגמה 2.} חישוב $\int_1^e \ln x\dx$.
+
+ידוע כי $x\ln x - x$ היא קדומה של $\ln x$ (ניתן לאמת בגזירה). לכן:
+\[
+\int_1^e \ln x\dx = \big[x\ln x - x\big]_1^e = (e \cdot 1 - e) - (1 \cdot 0 - 1) = 0 - (-1) = 1
+\]
+\end{exbox}
+
+\begin{exbox}
+\textbf{דוגמה 3.} חישוב $\int_0^{\pi/2} \sin^2 x\dx$.
+
+משתמשים בזהות $\sin^2 x = \frac{1 - \cos(2x)}{2}$:
+\[
+\int_0^{\pi/2} \sin^2 x\dx = \int_0^{\pi/2} \frac{1 - \cos(2x)}{2}\dx = \frac{1}{2}\brackets{x - \frac{\sin(2x)}{2}}_0^{\pi/2} = \frac{1}{2}\parens{\frac{\pi}{2} - 0} = \frac{\pi}{4}
+\]
+\end{exbox}
+
+% ===================================
+\subsection{גזירה של אינטגרל עם גבולות משתנים}
+% ===================================
+
+\begin{thmbox}
+\textbf{מסקנה 1 (גבול עליון משתנה).}
+אם $f$ רציפה ב־$I$ ו־$a \in I$, אז הפונקציה:
+\[
+F(x) = \int_a^x f(t)\dt
+\]
+מקיימת $F'(x) = f(x)$ לכל $x \in I$.
+\end{thmbox}
+
+\begin{thmbox}
+\textbf{מסקנה 2 (גבולות כלליים — כלל לייבניץ).}
+אם $f$ רציפה, ו־$u(x), v(x)$ גזירות, אז:
+\[
+\boxed{\frac{d}{dx} \int_{u(x)}^{v(x)} f(t)\dt = f(v(x)) \cdot v'(x) - f(u(x)) \cdot u'(x)}
+\]
+\end{thmbox}
+
+\begin{proofbox}
+\textbf{הוכחה.}
+נגדיר $G(x) = \int_a^x f(t)\dt$ כך ש־$G'(x) = f(x)$.
+
+אז:
+\[
+\int_{u(x)}^{v(x)} f(t)\dt = G(v(x)) - G(u(x))
+\]
+
+לפי כלל השרשרת:
+\[
+\frac{d}{dx}\big[G(v(x)) - G(u(x))\big] = G'(v(x)) \cdot v'(x) - G'(u(x)) \cdot u'(x) = f(v(x)) \cdot v'(x) - f(u(x)) \cdot u'(x)
+\]
+\hfill $\blacksquare$
+\end{proofbox}
+
+\begin{exbox}
+\textbf{דוגמה.} חשבו $\frac{d}{dx} \int_0^{x^2} e^{-t^2}\dt$.
+
+\textbf{פתרון:} כאן $u(x) = 0$, $v(x) = x^2$, $f(t) = e^{-t^2}$.
+
+לפי כלל לייבניץ:
+\[
+\frac{d}{dx} \int_0^{x^2} e^{-t^2}\dt = e^{-(x^2)^2} \cdot 2x - e^{-0} \cdot 0 = 2x e^{-x^4}
+\]
+\end{exbox}
+
+% ===================================
+\subsection{הערות חשובות}
+% ===================================
+
+\begin{notebox}
+\textbf{הערות 10.7.}
+\begin{enumerate}
+    \item \textbf{נגזרת של פונקציה גזירה} אינה בהכרח אינטגרבילית רימן.
+
+    \textbf{דוגמה:} הפונקציה $F(x) = x^2\sin\parens{\frac{1}{x^2}}$ עבור $x \neq 0$ ו־$F(0) = 0$ היא גזירה ב־$[0,1]$, אך $F'$ אינה חסומה ולכן אינה אינטגרבילית רימן.
+
+    \item יש דוגמאות לנגזרת \textbf{חסומה} שאינה אינטגרבילית רימן (למשל פונקציית Volterra).
+\end{enumerate}
+\end{notebox}
+
+% ===================================
+\subsection{תרגילים}
+% ===================================
+
+\begin{exercisebox}
+\textbf{תרגיל 1.}
+חשבו:
+\begin{enumerate}
+    \item $\int_0^1 \frac{x}{1+x^2}\dx$
+    \item $\int_1^4 \frac{1}{\sqrt{x}(1+\sqrt{x})}\dx$
+    \item $\int_0^\pi x\sin x\dx$
+\end{enumerate}
+\end{exercisebox}
+
+\begin{exercisebox}
+\textbf{תרגיל 2.}
+מצאו את $\limx{0} \frac{\int_0^x \sin(t^2)\dt}{x^3}$.
+
+\textbf{רמז:} השתמשו בכלל לופיטל או בפיתוח טיילור.
+\end{exercisebox}
+
+\begin{exercisebox}
+\textbf{תרגיל 3.}
+תהי $f$ רציפה ב־$\R$. הוכיחו כי אם $\int_0^x f(t)\dt = 0$ לכל $x \in \R$, אז $f \equiv 0$.
+\end{exercisebox}
+
+\begin{exercisebox}
+\textbf{תרגיל 4.}
+תהי $f : [a,b] \to \R$ רציפה. הוכיחו כי:
+\[
+\limx{0^+} \frac{1}{h} \int_a^{a+h} f(x)\dx = f(a)
+\]
+\end{exercisebox}

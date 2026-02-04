@@ -1,0 +1,329 @@
+% יחידה 2 - אינטגרל מסוים וסכומי רימן
+%====================================
+\section{יחידה 2: אינטגרל מסוים וסכומי רימן}
+
+\subsection{מבוא}
+%====================================
+
+ביחידה זו נגדיר את \textbf{האינטגרל המסוים} באמצעות סכומי דרבו. נלמד מתי פונקציה היא אינטגרבילית ונכיר את תכונות האינטגרל.
+
+%====================================
+\subsection{חלוקות ועידונים}
+%====================================
+
+\begin{defbox}
+\textbf{הגדרה 9.1: חלוקה}
+
+יהי $[a, b]$ קטע. \textbf{חלוקה} של הקטע $[a, b]$ היא קבוצה $\Pi = \{x_i\}_{i=0}^n$ של נקודות המקיימות:
+\[
+a = x_0 < x_1 < \cdots < x_n = b
+\]
+
+\textbf{הפרמטר של החלוקה} מסומן $\lambda(\Pi)$ ומוגדר:
+\[
+\lambda(\Pi) = \max_{0 \leq i \leq n-1} (x_{i+1} - x_i)
+\]
+\end{defbox}
+
+\begin{defbox}
+\textbf{הגדרה 9.2: עידון}
+
+יהי $[a, b]$ קטע. תהיינה $\Pi_1, \Pi_2$ חלוקות של $[a, b]$. נאמר כי $\Pi_2$ היא \textbf{עידון} של $\Pi_1$ כאשר $\Pi_1 \subseteq \Pi_2$.
+\end{defbox}
+
+\begin{notebox}
+\textbf{הערה:}
+\begin{itemize}
+    \item אם $\Pi_2$ היא עידון של $\Pi_1$ אז $\lambda(\Pi_2) \leq \lambda(\Pi_1)$.
+    \item לכל שתי חלוקות קיימת חלוקה שהיא עידון של שתיהן (האיחוד שלהן).
+\end{itemize}
+\end{notebox}
+
+%====================================
+\subsection{סכומי דרבו}
+%====================================
+
+\begin{defbox}
+\textbf{הגדרה 9.3: סכומי דרבו}
+
+תהי $f : [a, b] \to \R$ פונקציה \textbf{חסומה} ותהי $\Pi = \{x_i\}_{i=0}^n$ חלוקה של $[a, b]$.
+
+\textbf{סכום דרבו העליון} של $f$ ביחס לחלוקה $\Pi$:
+\[
+\overline{S}(f, \Pi) = \sum_{i=0}^{n-1} \left( \sup_{x \in [x_i, x_{i+1}]} f(x) \right) \cdot (x_{i+1} - x_i)
+\]
+
+\textbf{סכום דרבו התחתון} של $f$ ביחס לחלוקה $\Pi$:
+\[
+\underline{S}(f, \Pi) = \sum_{i=0}^{n-1} \left( \inf_{x \in [x_i, x_{i+1}]} f(x) \right) \cdot (x_{i+1} - x_i)
+\]
+\end{defbox}
+
+\begin{thmbox}
+\textbf{טענה 9.4: תכונות סכומי דרבו}
+
+תהי $f : [a, b] \to \R$ פונקציה חסומה. אז:
+\begin{enumerate}
+    \item לכל חלוקה $\Pi$ של $[a, b]$ מתקיים:
+    \[
+    (b-a) \cdot \inf f \leq \underline{S}(f, \Pi) \leq \overline{S}(f, \Pi) \leq (b-a) \cdot \sup f
+    \]
+
+    \item לכל שתי חלוקות $\Pi_1, \Pi_2$ של $[a, b]$, אם $\Pi_2$ היא עידון של $\Pi_1$ אז:
+    \[
+    \underline{S}(f, \Pi_1) \leq \underline{S}(f, \Pi_2) \leq \overline{S}(f, \Pi_2) \leq \overline{S}(f, \Pi_1)
+    \]
+
+    \item לכל שתי חלוקות $\Pi_1, \Pi_2$ של $[a, b]$ מתקיים:
+    \[
+    \underline{S}(f, \Pi_1) \leq \overline{S}(f, \Pi_2)
+    \]
+\end{enumerate}
+\end{thmbox}
+
+\begin{proofbox}
+\textbf{הוכחה (רעיון):}
+
+\textbf{(1)} לכל $i$ מתקיים $\inf f \leq \inf_{[x_i, x_{i+1}]} f \leq \sup_{[x_i, x_{i+1}]} f \leq \sup f$. כפל ב־$(x_{i+1} - x_i) > 0$ וסכימה נותנים את אי-השוויון.
+
+\textbf{(2)} מספיק להוכיח עבור עידון בנקודה אחת. אם $\Pi_2 = \Pi_1 \cup \{y\}$ כאשר $y \in (x_k, x_{k+1})$, אז:
+\[
+\sup_{[x_k, x_{k+1}]} f \cdot (x_{k+1} - x_k) \geq \sup_{[x_k, y]} f \cdot (y - x_k) + \sup_{[y, x_{k+1}]} f \cdot (x_{k+1} - y)
+\]
+
+\textbf{(3)} קיים עידון משותף $\Pi_3$ של $\Pi_1$ ושל $\Pi_2$. לפי (2):
+\[
+\underline{S}(f, \Pi_1) \leq \underline{S}(f, \Pi_3) \leq \overline{S}(f, \Pi_3) \leq \overline{S}(f, \Pi_2)
+\]
+\end{proofbox}
+
+%====================================
+\subsection{האינטגרל העליון והתחתון}
+%====================================
+
+\begin{defbox}
+\textbf{הגדרה 9.5: אינטגרל עליון ותחתון}
+
+תהי $f : [a, b] \to \R$ פונקציה חסומה.
+
+\textbf{האינטגרל העליון} של $f$ ב־$[a, b]$:
+\[
+\overline{\int_a^b} f(x) \dx = \inf \left\{ \overline{S}(f, \Pi) : \Pi \text{ חלוקה של } [a, b] \right\}
+\]
+
+\textbf{האינטגרל התחתון} של $f$ ב־$[a, b]$:
+\[
+\underline{\int_a^b} f(x) \dx = \sup \left\{ \underline{S}(f, \Pi) : \Pi \text{ חלוקה של } [a, b] \right\}
+\]
+\end{defbox}
+
+\begin{notebox}
+\textbf{הערה 9.6:}
+
+לכל פונקציה חסומה $f : [a, b] \to \R$ מתקיים:
+\[
+\underline{\int_a^b} f(x) \dx \leq \overline{\int_a^b} f(x) \dx
+\]
+\end{notebox}
+
+%====================================
+\subsection{אינטגרביליות לפי דרבו}
+%====================================
+
+\begin{defbox}
+\textbf{הגדרה 9.7: אינטגרביליות}
+
+תהי $f : [a, b] \to \R$ פונקציה חסומה. נאמר כי $f$ \textbf{אינטגרבילית (לפי דרבו)} ב־$[a, b]$ כאשר:
+\[
+\underline{\int_a^b} f(x) \dx = \overline{\int_a^b} f(x) \dx
+\]
+במקרה זה נסמן:
+\[
+\int_a^b f(x) \dx = \underline{\int_a^b} f(x) \dx = \overline{\int_a^b} f(x) \dx
+\]
+\end{defbox}
+
+\begin{thmbox}
+\textbf{טענה 9.8: קריטריון אינטגרביליות}
+
+תהי $f : [a, b] \to \R$ פונקציה חסומה. $f$ אינטגרבילית ב־$[a, b]$ \textbf{אם ורק אם} לכל $\eps > 0$ קיימת חלוקה $\Pi$ של $[a, b]$ כך ש:
+\[
+\overline{S}(f, \Pi) - \underline{S}(f, \Pi) < \eps
+\]
+\end{thmbox}
+
+%====================================
+\subsection{דוגמאות לאינטגרביליות}
+%====================================
+
+\begin{exbox}
+\textbf{דוגמה: פונקציה קבועה}
+
+תהי $f(x) = \alpha$ לכל $x \in [a, b]$.
+
+לכל חלוקה $\Pi$: $\overline{S}(f, \Pi) = \underline{S}(f, \Pi) = \alpha(b-a)$.
+
+לכן $f$ אינטגרבילית ומתקיים $\int_a^b \alpha \dx = \alpha(b-a)$.
+\end{exbox}
+
+\begin{exbox}
+\textbf{דוגמה: פונקציית דיריכלה (לא אינטגרבילית)}
+
+הפונקציה $D : [0, 1] \to \R$ המוגדרת:
+\[
+D(x) = \begin{cases} 1, & x \in \Q \\ 0, & x \notin \Q \end{cases}
+\]
+
+לכל חלוקה $\Pi$ ולכל תת-קטע $[x_i, x_{i+1}]$:
+\begin{itemize}
+    \item $\sup_{[x_i, x_{i+1}]} D = 1$ (כי יש רציונליים בכל קטע)
+    \item $\inf_{[x_i, x_{i+1}]} D = 0$ (כי יש אי-רציונליים בכל קטע)
+\end{itemize}
+
+לכן $\overline{S}(D, \Pi) = 1$ ו־$\underline{S}(D, \Pi) = 0$ לכל חלוקה.
+
+מכאן: $\overline{\int_0^1} D = 1$, $\underline{\int_0^1} D = 0$, ולכן $D$ \textbf{לא אינטגרבילית}.
+\end{exbox}
+
+\begin{exbox}
+\textbf{דוגמה: $f(x) = x^2$ ב־$[0, 1]$}
+
+לחלוקה שווה $\Pi_n$ עם $x_i = \frac{i}{n}$:
+\[
+\underline{S}(f, \Pi_n) = \frac{1}{n^3} \sum_{i=0}^{n-1} i^2 = \frac{(n-1)n(2n-1)}{6n^3} \xrightarrow{n \to \infty} \frac{1}{3}
+\]
+\[
+\overline{S}(f, \Pi_n) = \frac{1}{n^3} \sum_{i=1}^{n} i^2 = \frac{n(n+1)(2n+1)}{6n^3} \xrightarrow{n \to \infty} \frac{1}{3}
+\]
+
+לכן $\int_0^1 x^2 \dx = \frac{1}{3}$.
+\end{exbox}
+
+%====================================
+\subsection{משפטי אינטגרביליות}
+%====================================
+
+\begin{thmbox}
+\textbf{טענה 9.17: פונקציה רציפה היא אינטגרבילית}
+
+תהי $f : [a, b] \to \R$ פונקציה \textbf{רציפה}. אז $f$ אינטגרבילית ב־$[a, b]$.
+\end{thmbox}
+
+\begin{proofbox}
+\textbf{הוכחה (רעיון):}
+
+$f$ רציפה בקטע סגור וחסום, לכן רציפה במידה שווה. לכל $\eps > 0$ קיים $\delta > 0$ כך שאם $|x - y| < \delta$ אז $|f(x) - f(y)| < \frac{\eps}{b-a}$.
+
+ניקח חלוקה $\Pi$ עם $\lambda(\Pi) < \delta$. בכל תת-קטע $[x_i, x_{i+1}]$:
+\[
+\sup_{[x_i, x_{i+1}]} f - \inf_{[x_i, x_{i+1}]} f < \frac{\eps}{b-a}
+\]
+
+לכן:
+\[
+\overline{S}(f, \Pi) - \underline{S}(f, \Pi) < \frac{\eps}{b-a} \cdot (b-a) = \eps
+\]
+\end{proofbox}
+
+\begin{thmbox}
+\textbf{טענה 9.20: פונקציה מונוטונית היא אינטגרבילית}
+
+תהי $f : [a, b] \to \R$ פונקציה \textbf{מונוטונית}. אז $f$ אינטגרבילית ב־$[a, b]$.
+\end{thmbox}
+
+\begin{thmbox}
+\textbf{טענה 9.21: פונקציה חסומה עם מספר סופי של נקודות אי-רציפות}
+
+תהי $f : [a, b] \to \R$ פונקציה חסומה שרציפה בכל הנקודות מלבד \textbf{מספר סופי} של נקודות. אז $f$ אינטגרבילית ב־$[a, b]$.
+\end{thmbox}
+
+%====================================
+\subsection{תכונות האינטגרל המסוים}
+%====================================
+
+\begin{thmbox}
+\textbf{תכונות האינטגרל:}
+
+תהיינה $f, g : [a, b] \to \R$ אינטגרביליות. אז:
+
+\textbf{1. לינאריות:}
+\begin{itemize}
+    \item $\int_a^b (f + g) \dx = \int_a^b f \dx + \int_a^b g \dx$
+    \item $\int_a^b \alpha f \dx = \alpha \int_a^b f \dx$ לכל $\alpha \in \R$
+\end{itemize}
+
+\textbf{2. מונוטוניות:} אם $f(x) \leq g(x)$ לכל $x \in [a, b]$ אז $\int_a^b f \dx \leq \int_a^b g \dx$.
+
+\textbf{3. אדיטיביות בתחום:} לכל $c \in (a, b)$:
+\[
+\int_a^b f \dx = \int_a^c f \dx + \int_c^b f \dx
+\]
+
+\textbf{4. אי-שוויון המשולש:}
+\[
+\left| \int_a^b f \dx \right| \leq \int_a^b |f| \dx
+\]
+\end{thmbox}
+
+\begin{thmbox}
+\textbf{טענה 9.25: מכפלת פונקציות אינטגרביליות}
+
+תהיינה $f, g : [a, b] \to \R$ אינטגרביליות. אז $f \cdot g$ אינטגרבילית.
+\end{thmbox}
+
+\begin{proofbox}
+\textbf{הוכחה (רעיון):}
+
+ראשית מוכיחים שאם $f$ אינטגרבילית אז $f^2$ אינטגרבילית. לאחר מכן משתמשים בזהות:
+\[
+f \cdot g = \frac{1}{4} \big( (f+g)^2 - (f-g)^2 \big)
+\]
+\end{proofbox}
+
+\begin{thmbox}
+\textbf{טענה 9.27: הרכבה עם פונקציה רציפה}
+
+תהי $f : [a, b] \to [c, d]$ אינטגרבילית ותהי $g : [c, d] \to \R$ רציפה. אז $g \circ f$ אינטגרבילית.
+\end{thmbox}
+
+%====================================
+\subsection{פונקציית רימן}
+%====================================
+
+\begin{exbox}
+\textbf{פונקציית רימן -- אינטגרבילית עם אינסוף נקודות אי-רציפות}
+
+הפונקציה $R : [0, 1] \to \R$ מוגדרת:
+\[
+R(x) = \begin{cases} \frac{1}{q}, & x = \frac{p}{q} \text{ בצמצום}, p, q \in \N_+, \gcd(p, q) = 1 \\ 0, & x \notin \Q \text{ או } x = 0 \end{cases}
+\]
+
+\textbf{טענה:} $R$ אינטגרבילית ב־$[0, 1]$ ומתקיים $\int_0^1 R(x) \dx = 0$.
+
+\textbf{רעיון ההוכחה:} לכל $\eps > 0$ יש רק מספר \textbf{סופי} של נקודות $x$ עבורן $R(x) \geq \eps$. מכסים אותן בקטעים קטנים, ובשאר $\sup R < \eps$.
+\end{exbox}
+
+%====================================
+\subsection{תרגילים}
+%====================================
+
+\begin{exercisebox}
+\textbf{תרגילים:}
+\begin{enumerate}
+    \item יהי $[a, b]$ קטע ו־$\alpha \in \R$. הראו כי $f(x) = \alpha$ אינטגרבילית ומתקיים $\int_a^b \alpha \dx = \alpha(b-a)$.
+
+    \item תהיינה $f, g$ אינטגרביליות עם $f \geq g$ ו־$f(x_0) > g(x_0)$ בנקודה אחת. האם בהכרח $\int_a^b f > \int_a^b g$?
+
+    \textbf{תשובה:} לא בהכרח! אם $f(x_0) > g(x_0)$ רק בנקודה בודדת, האינטגרל לא משתנה. אבל \textbf{אם $f$ רציפה} ב־$x_0$, אז קיימת סביבה שבה $f > g$, ואז $\int_a^b f > \int_a^b g$.
+
+    \item תהי $f : [-a, a] \to \R$ אינטגרבילית. הוכיחו:
+    \begin{itemize}
+        \item אם $f$ זוגית: $\int_{-a}^a f = 2\int_0^a f$
+        \item אם $f$ אי-זוגית: $\int_{-a}^a f = 0$
+    \end{itemize}
+
+    \item תהיינה $f, g$ אינטגרביליות. הוכיחו כי $\max(f, g)$ ו־$\min(f, g)$ אינטגרביליות.
+
+    \textbf{רמז:} $\max(f, g) = \frac{1}{2}(f + g + |f - g|)$, $\min(f, g) = \frac{1}{2}(f + g - |f - g|)$
+\end{enumerate}
+\end{exercisebox}

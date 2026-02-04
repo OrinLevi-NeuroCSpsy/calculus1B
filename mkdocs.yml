@@ -69,3 +69,10 @@ nav:
   - בית: index.md
   - יחידות:
     - יחידה 1 - אינטגרלים: units/unit1.md
+    - יחידה 2 - אינטגרל מסוים ורימן: units/unit2.md
+    - יחידה 3 - משפט היסוד: units/unit3.md
+    - יחידה 4 - שיטות אינטגרציה: units/unit4.md
+    - יחידה 5 - יישומים: units/unit5.md
+  - עזר:
+    - דף נוסחאות: formula_sheet.md
+    - מיפוי החומר הרשמי: official_material_mapping.md

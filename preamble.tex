@@ -1,5 +1,6 @@
+
 % ===============================
-% שפה (עברית + English)
+% Language (Hebrew + English)
 % ===============================
 \usepackage{fontspec}
 \usepackage{polyglossia}
@@ -8,29 +9,49 @@
 \newfontfamily\hebrewfont{David CLM}
 
 % ===============================
-% מתמטיקה
+% Mathematics
 % ===============================
 \usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
 
 % ===============================
-% עמוד
+% Page Layout
 % ===============================
 \usepackage[a4paper,margin=2.5cm]{geometry}
 
 % ===============================
-% רשימות
+% Lists
 % ===============================
 \usepackage{enumitem}
-\setlist[itemize]{itemsep=0.3em}
+\setlist[itemize]{itemsep=0.3em, label=\textbullet}
+\renewcommand{\labelitemi}{\ensuremath{\circ}}
+\renewcommand{\labelitemii}{\ensuremath{-}}
 
 % ===============================
-% טבלאות וצבעים
+% Tables and Colors
 % ===============================
 \usepackage[table,xcdraw]{xcolor}
 \usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{array}
+
+% סגנון לטבלאות יפות
+\newcommand{\truthmark}[1]{\textbf{#1}}
+\newcolumntype{C}{>{\centering\arraybackslash}m{1.5cm}}
+
+% צבעים לטבלאות - טורקיז פסטלי (מתאים לחדו"א)
+\definecolor{tableheader}{RGB}{0,128,128}
+\definecolor{tablerow1}{RGB}{224,255,255}
+\definecolor{tablerow2}{RGB}{240,255,255}
+\definecolor{tableborder}{RGB}{0,100,100}
+
+% הגדרות מסגרת לטבלאות
+\setlength{\arrayrulewidth}{1.5pt}
+\arrayrulecolor{tableborder}
 
 % ===============================
-% גרפים וציורים (TikZ + pgfplots)
+% Graphics (TikZ + pgfplots)
 % ===============================
 \usepackage{float}
 \usepackage{caption}
@@ -38,19 +59,139 @@
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 
-\usepackage[most]{tcolorbox}
-
 \usepackage{tikz}
-\usetikzlibrary{shapes.geometric, arrows.meta, positioning}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, calc, decorations.pathreplacing}
 
 % ===============================
-% קישורים (אחרון)
+% Colored Boxes (mdframed - works with Hebrew)
+% ===============================
+\usepackage[framemethod=tikz]{mdframed}
+
+% הגדרה - כחול
+\newmdenv[
+  linecolor=blue!75!black,
+  backgroundcolor=blue!5,
+  linewidth=2pt,
+  roundcorner=5pt,
+  innertopmargin=10pt,
+  innerbottommargin=10pt,
+  innerrightmargin=10pt,
+  innerleftmargin=10pt,
+  skipabove=12pt,
+  skipbelow=12pt,
+  nobreak=true
+]{defbox}
+
+% משפט - ירוק
+\newmdenv[
+  linecolor=green!60!black,
+  backgroundcolor=green!5,
+  linewidth=2pt,
+  roundcorner=5pt,
+  innertopmargin=10pt,
+  innerbottommargin=10pt,
+  innerrightmargin=10pt,
+  innerleftmargin=10pt,
+  skipabove=12pt,
+  skipbelow=12pt,
+  nobreak=true
+]{thmbox}
+
+% דוגמה - כתום
+\newmdenv[
+  linecolor=orange!75!black,
+  backgroundcolor=orange!5,
+  linewidth=2pt,
+  roundcorner=5pt,
+  innertopmargin=10pt,
+  innerbottommargin=10pt,
+  innerrightmargin=10pt,
+  innerleftmargin=10pt,
+  skipabove=12pt,
+  skipbelow=12pt,
+  nobreak=true
+]{exbox}
+
+% הערה - צהוב
+\newmdenv[
+  linecolor=yellow!75!black,
+  backgroundcolor=yellow!10,
+  linewidth=2pt,
+  roundcorner=5pt,
+  innertopmargin=10pt,
+  innerbottommargin=10pt,
+  innerrightmargin=10pt,
+  innerleftmargin=10pt,
+  skipabove=12pt,
+  skipbelow=12pt,
+  nobreak=true
+]{notebox}
+
+% הוכחה - אפור
+\newmdenv[
+  linecolor=gray!75!black,
+  backgroundcolor=gray!5,
+  linewidth=2pt,
+  roundcorner=5pt,
+  innertopmargin=10pt,
+  innerbottommargin=10pt,
+  innerrightmargin=10pt,
+  innerleftmargin=10pt,
+  skipabove=12pt,
+  skipbelow=12pt,
+  nobreak=true
+]{proofbox}
+
+% תרגיל - סגול
+\newmdenv[
+  linecolor=purple!75!black,
+  backgroundcolor=purple!5,
+  linewidth=2pt,
+  roundcorner=5pt,
+  innertopmargin=10pt,
+  innerbottommargin=10pt,
+  innerrightmargin=10pt,
+  innerleftmargin=10pt,
+  skipabove=12pt,
+  skipbelow=12pt,
+  nobreak=true
+]{exercisebox}
+
+% Theorem Environments are defined in macros.tex
+
+% ===============================
+% Custom Commands - Calculus (non-duplicate)
+% ===============================
+\newcommand{\parens}[1]{\left(#1\right)}
+\newcommand{\brackets}[1]{\left[#1\right]}
+\newcommand{\dd}{\,\mathrm{d}}
+\newcommand{\dx}{\,\mathrm{d}x}
+\newcommand{\dt}{\,\mathrm{d}t}
+\newcommand{\du}{\,\mathrm{d}u}
+
+% Limits and integrals
+\newcommand{\limn}{\lim_{n \to \infty}}
+\newcommand{\limx}[1]{\lim_{x \to #1}}
+\newcommand{\intab}{\int_a^b}
+\newcommand{\intinf}{\int_a^{+\infty}}
+
+% Functions
+\newcommand{\dom}{\text{Dom}}
+\newcommand{\range}{\text{Range}}
+\newcommand{\im}{\text{Im}}
+
+% Check/X marks
+\newcommand{\xmark}{\ding{55}}
+\newcommand{\cmark}{\ding{51}}
+
+% ===============================
+% Hyperref (must be last)
 % ===============================
 \usepackage{hyperref}
 \hypersetup{
-    colorlinks=true,
-    linkcolor=blue,
-    citecolor=green,
-    filecolor=magenta,
-    urlcolor=cyan
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=green,
+  filecolor=magenta,
+  urlcolor=cyan
 }

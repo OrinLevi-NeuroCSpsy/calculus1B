@@ -1,0 +1,303 @@
+% יחידה 1 - פונקציות קדומות ואינטגרל לא מסוים
+%====================================
+\section{יחידה 1: פונקציות קדומות ואינטגרל לא מסוים}
+
+\subsection{מבוא}
+%====================================
+
+ביחידה זו נלמד על הפעולה ההפוכה לגזירה -- מציאת \textbf{פונקציה קדומה}. נגדיר את האינטגרל הלא מסוים ונלמד שיטות בסיסיות לחישובו.
+
+%====================================
+\subsection{פונקציה קדומה}
+%====================================
+
+\subsubsection{הגדרה בסיסית}
+
+\begin{defbox}
+\textbf{הגדרה 8.42: פונקציה קדומה}
+
+יהי $I$ קטע ותהי $f : I \to \R$ פונקציה. נאמר כי פונקציה $F : I \to \R$ היא \textbf{קדומה} של $f$ כאשר $F$ גזירה ב־$I$ ומתקיים $F' = f$.
+\end{defbox}
+
+\begin{exbox}
+\textbf{דוגמאות:}
+\begin{itemize}
+    \item הפונקציה $F(x) = x^2$ היא קדומה של $f(x) = 2x$ כי $F'(x) = 2x = f(x)$.
+    \item הפונקציה $F(x) = \sin x$ היא קדומה של $f(x) = \cos x$ כי $(\sin x)' = \cos x$.
+    \item הפונקציה $F(x) = e^x$ היא קדומה של $f(x) = e^x$ כי $(e^x)' = e^x$.
+\end{itemize}
+\end{exbox}
+
+\subsubsection{יחידות הקדומה}
+
+\begin{thmbox}
+\textbf{טענה 8.43: יחידות הקדומה עד כדי קבוע}
+
+יהי $I$ קטע, תהי $f : I \to \R$ פונקציה ותהי $F : I \to \R$ קדומה של $f$. אז לכל פונקציה $G : I \to \R$ מתקיים:
+
+$G$ קדומה של $f$ \textbf{אם ורק אם} קיים $c \in \R$ כך שלכל $x \in I$ מתקיים $G(x) = F(x) + c$.
+\end{thmbox}
+
+\begin{proofbox}
+\textbf{הוכחה (רעיון):}
+
+$(\Leftarrow)$ אם $G(x) = F(x) + c$ אז $G'(x) = F'(x) + 0 = f(x)$, כלומר $G$ קדומה.
+
+$(\Rightarrow)$ אם $G$ קדומה אז $(G - F)' = G' - F' = f - f = 0$. פונקציה שנגזרתה אפס בקטע היא קבועה (מסקנה 8.13), לכן $G - F = c$ לקבוע כלשהו.
+\end{proofbox}
+
+\begin{notebox}
+\textbf{מסקנה חשובה:}
+
+אם קיימת קדומה אחת, אז קיימות \textbf{אינסוף קדומות} -- כל אחת מהן שונה מהאחרות בקבוע בלבד.
+\end{notebox}
+
+%====================================
+\subsection{תכונת דרבו וקיום קדומה}
+%====================================
+
+\begin{defbox}
+\textbf{הערה 8.44: תכונת דרבו}
+
+אם $F$ היא קדומה של $f$ אז לפי משפט דרבו, כיוון שמתקיים $F' = f$ נסיק כי $f$ מקיימת את \textbf{תכונת דרבו} (תכונת ערך הביניים לנגזרות).
+
+\textbf{מסקנה:} לפונקציה שלא מקיימת את תכונת דרבו \textbf{לא קיימת} פונקציה קדומה.
+\end{defbox}
+
+\begin{exbox}
+\textbf{דוגמה לפונקציה ללא קדומה:}
+
+הפונקציה $f : \R \to \R$ הנתונה על ידי:
+\[
+f(x) = \begin{cases} 1, & x \geq 0 \\ -1, & x < 0 \end{cases}
+\]
+אינה מקיימת את תכונת דרבו (``קופצת'' מ־$(-1)$ ל־$1$ ב־$x=0$), ולכן \textbf{לא קיימת לה קדומה}.
+\end{exbox}
+
+%====================================
+\subsection{סימון האינטגרל הלא מסוים}
+%====================================
+
+\begin{defbox}
+\textbf{סימון:}
+
+יהי $I$ קטע ותהי $f : I \to \R$ פונקציה. נניח כי קיימת ל־$f$ קדומה. את \textbf{אוסף הקדומות} של $f$ נסמן:
+\[
+\int f(x) \dx
+\]
+אם $F : I \to \R$ קדומה של $f$ אז נרשום:
+\[
+\int f(x) \dx = F(x) + c
+\]
+כאשר $c$ מייצג קבוע שרירותי.
+\end{defbox}
+
+%====================================
+\subsection{טבלת אינטגרלים בסיסיים}
+%====================================
+
+להלן אינטגרלים בסיסיים שחשוב לזכור:
+
+\begin{center}
+\begin{tabular}{|C|C|C|}
+\hline
+\rowcolor{tableheader}\color{white}\textbf{פונקציה} & \color{white}\textbf{קדומה} & \color{white}\textbf{תחום} \\
+\hline
+\rowcolor{tablerow1} $x^n$ & $\frac{x^{n+1}}{n+1} + c$ & $n \in \N$, כל קטע \\
+\hline
+\rowcolor{tablerow2} $x^\lambda$ $(\lambda \neq -1)$ & $\frac{x^{\lambda+1}}{\lambda+1} + c$ & $(0, +\infty)$ \\
+\hline
+\rowcolor{tablerow1} $\frac{1}{x}$ & $\ln|x| + c$ & קטע שאינו כולל $0$ \\
+\hline
+\rowcolor{tablerow2} $e^x$ & $e^x + c$ & כל קטע \\
+\hline
+\rowcolor{tablerow1} $a^x$ $(a > 0, a \neq 1)$ & $\frac{a^x}{\ln a} + c$ & כל קטע \\
+\hline
+\rowcolor{tablerow2} $\sin x$ & $-\cos x + c$ & כל קטע \\
+\hline
+\rowcolor{tablerow1} $\cos x$ & $\sin x + c$ & כל קטע \\
+\hline
+\rowcolor{tablerow2} $\frac{1}{\cos^2 x}$ & $\tan x + c$ & $\left(-\frac{\pi}{2}, \frac{\pi}{2}\right)$ \\
+\hline
+\rowcolor{tablerow1} $\frac{1}{\sin^2 x}$ & $-\cot x + c$ & $(0, \pi)$ \\
+\hline
+\rowcolor{tablerow2} $\frac{1}{\sqrt{1-x^2}}$ & $\arcsin x + c$ & $(-1, 1)$ \\
+\hline
+\rowcolor{tablerow1} $\frac{1}{1+x^2}$ & $\arctan x + c$ & כל קטע \\
+\hline
+\end{tabular}
+\end{center}
+
+%====================================
+\subsection{אינטגרציה בחלקים}
+%====================================
+
+\begin{thmbox}
+\textbf{טענה 8.45: אינטגרציה בחלקים}
+
+יהי $I$ קטע ותהיינה $F, g : I \to \R$ פונקציות גזירות ב־$I$. נניח כי ל־$F \cdot g'$ קיימת קדומה ב־$I$. אז קיימת ל־$F' \cdot g$ קדומה ב־$I$ ומתקיים:
+\[
+\int F'(x) g(x) \dx = F(x) g(x) - \int F(x) g'(x) \dx
+\]
+\end{thmbox}
+
+\begin{proofbox}
+\textbf{הוכחה:}
+
+לפי ההנחה קיימת ל־$F \cdot g'$ קדומה ב־$I$, נסמנה $H : I \to \R$.
+
+נתבונן ב־$F \cdot g - H$.
+
+$F, g, H$ גזירות ולכן $F \cdot g - H$ גזירה ומתקיים:
+\[
+(F \cdot g - H)' = F' \cdot g + F \cdot g' - F \cdot g' = F' \cdot g
+\]
+לכן $F \cdot g - H$ היא קדומה של $F' \cdot g$ ב־$I$, ומכאן:
+\[
+\int F'(x) g(x) \dx = F(x) g(x) - \int F(x) g'(x) \dx
+\]
+\end{proofbox}
+
+\begin{exbox}
+\textbf{דוגמה: קדומה ל־$\ln x$ בקטע $(0, +\infty)$}
+
+נגדיר $F(x) = x$, $g(x) = \ln x$ לכל $x \in (0, +\infty)$.
+
+$F, g$ גזירות ומתקיים $F'(x) = 1$, $g'(x) = \frac{1}{x}$.
+
+לכל $x \in (0, +\infty)$ מתקיים $F(x) g'(x) = x \cdot \frac{1}{x} = 1$.
+
+מכאן $H(x) = x$ היא קדומה של $F \cdot g'$.
+
+לפי אינטגרציה בחלקים:
+\[
+\int \ln x \dx = \int F'(x) g(x) \dx = F(x) g(x) - \int F(x) g'(x) \dx = x \ln x - \int 1 \dx = x \ln x - x + c
+\]
+\end{exbox}
+
+%====================================
+\subsection{שינוי משתנה}
+%====================================
+
+\subsubsection{שינוי משתנה -- גרסה ראשונה}
+
+\begin{thmbox}
+\textbf{טענה 8.46: שינוי משתנה (1)}
+
+יהיו $I, J$ קטעים ותהיינה $f : I \to \R$ ו־$g : J \to I$ פונקציות. נניח כי $f$ בעלת קדומה $F : I \to \R$. בנוסף, נניח כי $g$ גזירה ב־$J$. אז קיימת ל־$(f \circ g) \cdot g'$ קדומה ב־$J$ ומתקיים:
+\[
+\int f(g(x)) \cdot g'(x) \dx = F(g(x)) + c
+\]
+\end{thmbox}
+
+\begin{proofbox}
+\textbf{הוכחה:}
+
+נתבונן ב־$F \circ g : J \to \R$.
+
+$F$ ו־$g$ גזירות, לכן לפי כלל השרשרת $F \circ g$ גזירה ומתקיים:
+\[
+(F \circ g)' = (F' \circ g) \cdot g' = (f \circ g) \cdot g'
+\]
+לכן $F \circ g$ קדומה של $(f \circ g) \cdot g'$.
+\end{proofbox}
+
+\begin{exbox}
+\textbf{דוגמה: קדומה ל־$\tan x$ בקטע $\left(-\frac{\pi}{2}, \frac{\pi}{2}\right)$}
+
+לכל $x \in I$ מתקיים $\tan x = \frac{\sin x}{\cos x}$.
+
+נגדיר $g : I \to (0, +\infty)$ על ידי $g(x) = \cos x$.
+
+$g$ גזירה ב־$I$ ומתקיים $g'(x) = -\sin x$.
+
+נגדיר $f : (0, +\infty) \to \R$ על ידי $f(u) = -\frac{1}{u}$.
+
+הפונקציה $F(u) = -\ln u$ היא קדומה של $f$.
+
+לכל $x \in I$ מתקיים:
+\[
+f(g(x)) \cdot g'(x) = f(\cos x) \cdot (-\sin x) = -\frac{1}{\cos x} \cdot (-\sin x) = \tan x
+\]
+לפי משפט שינוי משתנה נסיק כי:
+\[
+\int \tan x \dx = F(g(x)) + c = -\ln(\cos x) + c
+\]
+\end{exbox}
+
+\subsubsection{שינוי משתנה -- גרסה שנייה}
+
+\begin{thmbox}
+\textbf{טענה 8.47: שינוי משתנה (2)}
+
+יהיו $I, J$ קטעים ותהיינה $f : I \to \R$ ו־$g : J \to I$ פונקציות. נניח כי $g$ גזירה ב־$J$, \textbf{על}, ומתקיים $g'(x) \neq 0$ לכל $x \in J$. בנוסף, נניח כי $(f \circ g) \cdot g' : J \to \R$ היא בעלת קדומה $F : J \to \R$. אז:
+\begin{enumerate}
+    \item $g : J \to I$ הפיכה.
+    \item קיימת ל־$f$ קדומה ב־$I$ ומתקיים:
+    \[
+    \int f(x) \dx = F(g^{-1}(x)) + c
+    \]
+\end{enumerate}
+\end{thmbox}
+
+\begin{proofbox}
+\textbf{הוכחה (רעיון):}
+
+\textbf{(1)} לפי ההנחה לכל $x \in J$ מתקיים $g'(x) \neq 0$. לפי משפט דרבו נסיק כי $g'$ שומרת סימן ב־$J$, על כן $g$ מונוטונית ממש. מכאן $g$ חד-חד-ערכית, ולפי ההנחה $g$ על, ולכן $g$ הפיכה.
+
+\textbf{(2)} נתבונן ב־$F \circ g^{-1} : I \to \R$. לפי כלל השרשרת ונגזרת פונקציה הפוכה:
+\[
+(F \circ g^{-1})'(x) = F'(g^{-1}(x)) \cdot (g^{-1})'(x) = (f \circ g)(g^{-1}(x)) \cdot g'(g^{-1}(x)) \cdot \frac{1}{g'(g^{-1}(x))} = f(x)
+\]
+\end{proofbox}
+
+%====================================
+\subsection{דוגמאות נוספות}
+%====================================
+
+\begin{exbox}
+\textbf{דוגמה: $\int \frac{1}{a^2 + x^2} \dx$ עבור $a > 0$}
+
+נגדיר $g(t) = at$. אז $g'(t) = a$.
+
+$(f \circ g)(t) \cdot g'(t) = \frac{1}{a^2 + a^2 t^2} \cdot a = \frac{1}{a(1+t^2)}$
+
+קדומה: $\frac{1}{a} \arctan t$.
+
+לכן:
+\[
+\int \frac{1}{a^2 + x^2} \dx = \frac{1}{a} \arctan \frac{x}{a} + c
+\]
+\end{exbox}
+
+\begin{exbox}
+\textbf{דוגמה: $\int \frac{1}{\sqrt{a^2 - x^2}} \dx$ עבור $a > 0$ בקטע $(-a, a)$}
+
+באופן דומה:
+\[
+\int \frac{1}{\sqrt{a^2 - x^2}} \dx = \arcsin \frac{x}{a} + c
+\]
+\end{exbox}
+
+%====================================
+\subsection{תרגילים}
+%====================================
+
+\begin{exercisebox}
+\textbf{תרגילים:}
+\begin{enumerate}
+    \item הוכיחו כי קיימת פונקציה $f : [0,1] \to \R$ שמקיימת את תכונת דרבו אך \textbf{לא קיימת} לה פונקציה קדומה.
+
+    \item חשבו את האינטגרלים הבאים:
+    \begin{itemize}
+        \item $\int x e^x \dx$
+        \item $\int x^2 e^x \dx$
+        \item $\int e^x \sin x \dx$
+        \item $\int \arcsin x \dx$
+    \end{itemize}
+
+    \item מצאו קדומה ל־$\frac{1}{x^2 - a^2}$ (עבור $a \neq 0$) בקטע מתאים.
+
+    \textbf{רמז:} השתמשו בפירוק: $\frac{1}{x^2 - a^2} = \frac{1}{2a} \left( \frac{1}{x-a} - \frac{1}{x+a} \right)$
+\end{enumerate}
+\end{exercisebox}
