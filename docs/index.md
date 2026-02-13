@@ -82,10 +82,45 @@
 
 <div class="card-grid" markdown>
 
-<div class="card card-cyan" markdown>
+<div class="card card-blue" markdown>
 
-### בקרוב...
-תוכן חדוא 2ב יתווסף בסמסטר ב'.
+### סדרות וטורי פונקציות
+- [התכנסות נקודתית ובמידה שווה](calculus2b/chapters/chapter1.md)
+- [קריטריוני התכנסות](calculus2b/chapters/chapter2.md)
+- [התכנסות במ"ש, גזירות ואינטגרביליות](calculus2b/chapters/chapter3.md)
+
+</div>
+
+<div class="card card-green" markdown>
+
+### טורי פורייה
+- [טור פורייה מרוכב ונוסחת פרסבל](calculus2b/chapters/chapter4.md)
+- [התכנסות טור פורייה ושימושים](calculus2b/chapters/chapter5.md)
+
+</div>
+
+<div class="card card-orange" markdown>
+
+### מבוא לכמה משתנים
+- [מרחבים אוקלידיים וטופולוגיה](calculus2b/chapters/chapter6.md)
+- [גבולות ורציפות בכמה משתנים](calculus2b/chapters/chapter7.md)
+
+</div>
+
+<div class="card card-purple" markdown>
+
+### חשבון דיפרנציאלי בכמה משתנים
+- [נגזרות חלקיות ודיפרנציאביליות](calculus2b/chapters/chapter8.md)
+- [כלל השרשרת והפונקציה הסתומה](calculus2b/chapters/chapter9.md)
+- [קיצון, טיילור וכופלי לגרנז'](calculus2b/chapters/chapter10.md)
+
+</div>
+
+<div class="card card-teal" markdown>
+
+### חשבון אינטגרלי בכמה משתנים
+- [אינטגרלים על תיבות ומשפט לבג](calculus2b/chapters/chapter11.md)
+- [פוביני, החלפת משתנים ואינטגרלים לא אמיתיים](calculus2b/chapters/chapter12.md)
 
 </div>
 
@@ -118,7 +153,14 @@
 
 | נושא | תיאור |
 |------|-------|
-| **בקרוב** | תוכן יתווסף בסמסטר ב' |
+| **סדרות וטורי פונקציות** | התכנסות נקודתית, התכנסות במידה שווה, קריטריוני התכנסות |
+| **טורי פורייה** | טור מרוכב, נוסחת פרסבל, התכנסות נקודתית/במ"ש/בנורמה |
+| **מרחבים אוקלידיים** | המבנה הטופולוגי, קבוצות פתוחות/סגורות/חסומות |
+| **גבולות ורציפות** | פונקציות בכמה משתנים |
+| **נגזרות חלקיות** | נגזרות כיווניות, דיפרנציאביליות, גרדיאנט |
+| **כלל השרשרת** | משפט הפונקציה הסתומה |
+| **קיצון מקומי** | פולינום טיילור, כופלי לגרנז' |
+| **אינטגרלים בכמה משתנים** | תיבות, קבוצות זניחות, משפט לבג, פוביני, החלפת משתנים |
 
 ---
 

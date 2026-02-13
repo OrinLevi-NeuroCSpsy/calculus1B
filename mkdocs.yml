@@ -89,7 +89,22 @@ nav:
       - דף נוסחאות: calculus1b/formula_sheet.md
       - מיפוי החומר הרשמי: calculus1b/official_material_mapping.md
   - חדוא 2ב:
-    - סיכומים:
-      - בקרוב...: calculus2b/index.md
+    - חלק I - סדרות וטורי פונקציות:
+      - פרק 1 - התכנסות נקודתית ובמידה שווה: calculus2b/chapters/chapter1.md
+      - פרק 2 - קריטריוני התכנסות: calculus2b/chapters/chapter2.md
+      - פרק 3 - התכנסות במ"ש, גזירות ואינטגרביליות: calculus2b/chapters/chapter3.md
+    - חלק II - טורי פורייה:
+      - פרק 4 - טור פורייה מרוכב ונוסחת פרסבל: calculus2b/chapters/chapter4.md
+      - פרק 5 - התכנסות טור פורייה ושימושים: calculus2b/chapters/chapter5.md
+    - חלק III - מבוא לכמה משתנים:
+      - פרק 6 - מרחבים אוקלידיים וטופולוגיה: calculus2b/chapters/chapter6.md
+      - פרק 7 - גבולות ורציפות בכמה משתנים: calculus2b/chapters/chapter7.md
+    - חלק IV - חשבון דיפרנציאלי בכמה משתנים:
+      - פרק 8 - נגזרות חלקיות ודיפרנציאביליות: calculus2b/chapters/chapter8.md
+      - פרק 9 - כלל השרשרת והפונקציה הסתומה: calculus2b/chapters/chapter9.md
+      - פרק 10 - קיצון, טיילור וכופלי לגרנז': calculus2b/chapters/chapter10.md
+    - חלק V - חשבון אינטגרלי בכמה משתנים:
+      - פרק 11 - אינטגרלים על תיבות ומשפט לבג: calculus2b/chapters/chapter11.md
+      - פרק 12 - פוביני, החלפת משתנים ואינטגרלים לא אמיתיים: calculus2b/chapters/chapter12.md
     - עזר:
       - דף נוסחאות: calculus2b/formula_sheet.md
