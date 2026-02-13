@@ -1,5 +1,5 @@
-site_name: חשבון אינפיניטסימלי 1ב
-site_description: סיכום מקיף לקורס חדו"א 1ב, אוניברסיטת תל אביב
+site_name: חשבון אינפיניטסימלי
+site_description: סיכום מקיף לקורסים חדו"א 1ב ו-2ב, אוניברסיטת תל אביב
 docs_dir: docs
 site_url: https://orinlevi.github.io/calculus1B/
 
@@ -67,23 +67,29 @@ extra_javascript:
 
 nav:
   - בית: index.md
-  - חלק I - יסודות:
-    - פרק 1 - תורת הקבוצות: chapters/chapter1.md
-    - פרק 2 - המספרים הממשיים: chapters/chapter2.md
-  - חלק II - סדרות וטורים:
-    - פרק 3 - סדרות: chapters/chapter3.md
-    - פרק 4 - טורים: chapters/chapter4.md
-  - חלק III - גבולות ורציפות:
-    - פרק 5 - פונקציות: chapters/chapter5.md
-    - פרק 6 - גבולות: chapters/chapter6.md
-    - פרק 7 - רציפות: chapters/chapter7.md
-  - חלק IV - גזירות:
-    - פרק 8 - גזירות ולופיטל וטיילור: chapters/chapter8.md
-  - חלק V - אינטגרלים:
-    - פרק 9 - פונקציות קדומות: chapters/chapter9.md
-    - פרק 10 - אינטגרל רימן: chapters/chapter10.md
-    - פרק 11 - המשפט היסודי: chapters/chapter11.md
-    - פרק 12 - אינטגרלים לא אמיתיים: chapters/chapter12.md
-  - עזר:
-    - דף נוסחאות: formula_sheet.md
-    - מיפוי החומר הרשמי: official_material_mapping.md
+  - חדוא 1ב:
+    - חלק I - יסודות:
+      - פרק 1 - תורת הקבוצות: calculus1b/chapters/chapter1.md
+      - פרק 2 - המספרים הממשיים: calculus1b/chapters/chapter2.md
+    - חלק II - סדרות וטורים:
+      - פרק 3 - סדרות: calculus1b/chapters/chapter3.md
+      - פרק 4 - טורים: calculus1b/chapters/chapter4.md
+    - חלק III - גבולות ורציפות:
+      - פרק 5 - פונקציות: calculus1b/chapters/chapter5.md
+      - פרק 6 - גבולות: calculus1b/chapters/chapter6.md
+      - פרק 7 - רציפות: calculus1b/chapters/chapter7.md
+    - חלק IV - גזירות:
+      - פרק 8 - גזירות ולופיטל וטיילור: calculus1b/chapters/chapter8.md
+    - חלק V - אינטגרלים:
+      - פרק 9 - פונקציות קדומות: calculus1b/chapters/chapter9.md
+      - פרק 10 - אינטגרל רימן: calculus1b/chapters/chapter10.md
+      - פרק 11 - המשפט היסודי: calculus1b/chapters/chapter11.md
+      - פרק 12 - אינטגרלים לא אמיתיים: calculus1b/chapters/chapter12.md
+    - עזר:
+      - דף נוסחאות: calculus1b/formula_sheet.md
+      - מיפוי החומר הרשמי: calculus1b/official_material_mapping.md
+  - חדוא 2ב:
+    - סיכומים:
+      - בקרוב...: calculus2b/index.md
+    - עזר:
+      - דף נוסחאות: calculus2b/formula_sheet.md

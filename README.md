@@ -1,10 +1,10 @@
-# חדו״א 1ב — סיכום לפי אביב צנזור
+# חדו״א — סיכום קורסים 1ב ו-2ב
 
-סיכום קורס Calculus 1B (למדמ״ח) באוניברסיטת תל אביב, לפי אביב צנזור.
+סיכום קורסים Calculus 1B ו-2B (למדמ״ח) באוניברסיטת תל אביב.
 
 [![Deploy to GitHub Pages](https://github.com/orinlevi/calculus1B/actions/workflows/deploy.yml/badge.svg)](https://github.com/orinlevi/calculus1B/actions/workflows/deploy.yml)
 
-**[📖 צפה באתר](https://orinlevi-neurocspsy.github.io/calculus1B/)**
+**[צפה באתר](https://orinlevi-neurocspsy.github.io/calculus1B/)**
 
 ## מבנה הפרויקט
 
@@ -13,6 +13,8 @@
 | `main.tex` | הקובץ הראשי — כותרת, תוכן עניינים ושליחת יחידות |
 | `preamble.tex` | חבילות, הגדרות ושפות (עברית + אנגלית) |
 | `macros.tex` | פקודות מותאמות (קבוצות מספרים, משפטים, הגדרות ועוד) |
+| `docs/calculus1b/` | תוכן אתר חדוא 1ב |
+| `docs/calculus2b/` | תוכן אתר חדוא 2ב |
 
 ## דרישות
 

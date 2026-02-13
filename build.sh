@@ -1,5 +1,5 @@
 #!/bin/bash
-# Auto-build script for Calculus 1B LaTeX
+# Auto-build script for Calculus LaTeX (1B + 2B)
 
 cd "$(dirname "$0")"
 
