@@ -175,18 +175,81 @@
     - $\int_0^1 \frac{1}{\sqrt{x(1-x)}}\,dx$
     - $\int_1^{+\infty} \frac{x}{e^x}\,dx$
 
+??? success "פתרון"
+    **$\int_1^{+\infty} \frac{\sin x}{x^2}\,dx$ — מתכנס בהחלט:**
+
+    $\left|\frac{\sin x}{x^2}\right| \le \frac{1}{x^2}$, ו־$\int_1^{+\infty} \frac{1}{x^2}\,dx$ מתכנס ($\alpha = 2 > 1$). לפי מבחן ההשוואה, האינטגרל מתכנס בהחלט, ולכן מתכנס.
+
+    **$\int_1^{+\infty} \frac{1}{x\ln x}\,dx$ — מתבדר:**
+
+    עם $u = \ln x$, $du = \frac{1}{x}dx$:
+    $$\int_1^R \frac{1}{x\ln x}\,dx = \int_0^{\ln R} \frac{du}{u} = \ln(\ln R) \xrightarrow{R \to +\infty} +\infty$$
+
+    **$\int_0^1 \frac{1}{\sqrt{x(1-x)}}\,dx$ — מתכנס:**
+
+    סינגולריות ב־$x=0$ וב־$x=1$. נפצל: $\int_0^{1/2} + \int_{1/2}^1$.
+
+    ליד $x = 0$: $\frac{1}{\sqrt{x(1-x)}} \sim \frac{1}{\sqrt{x}}$, ו־$\int_0^{1/2} \frac{1}{\sqrt{x}}\,dx$ מתכנס (סוג שני, $\alpha = 1/2 < 1$).
+
+    ליד $x = 1$: עם $t = 1-x$, באופן דומה $\sim \frac{1}{\sqrt{t}}$ — מתכנס.
+
+    **$\int_1^{+\infty} \frac{x}{e^x}\,dx$ — מתכנס:**
+
+    אינטגרציה בחלקים: $\int_1^R xe^{-x}\,dx = [-xe^{-x}]_1^R + \int_1^R e^{-x}\,dx = -Re^{-R} + e^{-1} - e^{-R} + e^{-1}$.
+
+    ב־$R \to +\infty$: $Re^{-R} \to 0$, $e^{-R} \to 0$, ולכן $\int_1^{+\infty} xe^{-x}\,dx = \frac{2}{e}$.
+
 !!! question "תרגיל 2"
     הוכיחו כי $\int_0^{+\infty} e^{-x^2}\,dx = \frac{\sqrt{\pi}}{2}$.
 
     *(רמז: זה אינטגרל גאוסיאני — ההוכחה משתמשת באינטגרל כפול.)*
 
+??? success "פתרון"
+    נסמן $I = \int_0^{+\infty} e^{-x^2}\,dx$. נחשב $I^2$:
+
+    $$I^2 = \int_0^{+\infty} e^{-x^2}\,dx \cdot \int_0^{+\infty} e^{-y^2}\,dy = \int_0^{+\infty}\int_0^{+\infty} e^{-(x^2+y^2)}\,dx\,dy$$
+
+    מעבר לקואורדינטות פולריות $x = r\cos\theta$, $y = r\sin\theta$:
+
+    $$I^2 = \int_0^{\pi/2}\int_0^{+\infty} e^{-r^2} \cdot r\,dr\,d\theta = \frac{\pi}{2} \cdot \int_0^{+\infty} re^{-r^2}\,dr$$
+
+    עם $u = r^2$: $\int_0^{+\infty} re^{-r^2}\,dr = \frac{1}{2}\int_0^{+\infty} e^{-u}\,du = \frac{1}{2}$.
+
+    לכן $I^2 = \frac{\pi}{2} \cdot \frac{1}{2} = \frac{\pi}{4}$, ומכאן $I = \frac{\sqrt{\pi}}{2}$. $\blacksquare$
+
 !!! question "תרגיל 3"
     חשבו את נפח הגוף הנוצר מסיבוב $y = e^{-x}$ סביב ציר $x$ ב־$[0,+\infty)$.
 
+??? success "פתרון"
+    לפי נוסחת הדיסקים:
+
+    $$V = \pi \int_0^{+\infty} [e^{-x}]^2\,dx = \pi \int_0^{+\infty} e^{-2x}\,dx = \pi \left[-\frac{1}{2}e^{-2x}\right]_0^{+\infty} = \pi \cdot \frac{1}{2} = \frac{\pi}{2}$$
+
 !!! question "תרגיל 4"
     תהי $f : [a,+\infty) \to \mathbb{R}$ אי־שלילית ואינטגרבילית מקומית. הוכיחו כי אם $\int_a^{+\infty} f(x)\,dx$ מתכנס וגם קיים $\lim_{x \to +\infty} f(x)$, אז הגבול שווה $0$.
+
+??? success "פתרון"
+    נניח בשלילה כי $L = \lim_{x \to +\infty} f(x) > 0$.
+
+    אז קיים $M$ כך שלכל $x > M$ מתקיים $f(x) > \frac{L}{2}$.
+
+    לכן לכל $R > M$:
+    $$\int_a^R f(x)\,dx \ge \int_M^R f(x)\,dx > \frac{L}{2}(R - M) \xrightarrow{R \to +\infty} +\infty$$
+
+    סתירה לכך שהאינטגרל מתכנס. מכאן $L = 0$. $\blacksquare$
 
 !!! question "תרגיל 5"
     תהי $f : [1,+\infty) \to \mathbb{R}$ אי־שלילית, יורדת ואינטגרבילית מקומית. הגדירו $a_n = \sum_{k=1}^n f(k) - \int_1^n f(x)\,dx$. הוכיחו כי $\{a_n\}$ מתכנסת.
 
     *(זו הדרך להגדיר את קבוע אוילר־מסקרוני $\gamma$.)*
+
+??? success "פתרון"
+    נסמן $b_k = f(k) - \int_k^{k+1} f(x)\,dx$. מכיוון ש־$f$ יורדת, לכל $x \in [k, k+1]$: $f(k) \ge f(x)$, ולכן $b_k \ge 0$.
+
+    כמו כן $f(x) \ge f(k+1)$ ב-$[k, k+1]$, ולכן $b_k = f(k) - \int_k^{k+1} f(x)\,dx \le f(k) - f(k+1)$.
+
+    **$\{a_n\}$ מונוטונית יורדת:** $a_{n+1} - a_n = f(n+1) - \int_n^{n+1} f(x)\,dx \le 0$ (כי $f$ יורדת).
+
+    **$\{a_n\}$ חסומה מלמטה:** נכתוב $a_n = \sum_{k=1}^{n-1} b_k + f(n)$. כל $b_k \ge 0$ ו-$f(n) \ge 0$, לכן $a_n \ge 0$.
+
+    סדרה מונוטונית יורדת וחסומה מלמטה מתכנסת. $\blacksquare$
