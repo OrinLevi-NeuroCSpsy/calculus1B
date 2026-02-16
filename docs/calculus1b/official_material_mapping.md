@@ -9,7 +9,7 @@
 | **calculus1B-notes.pdf** / **calculus1B-notes-(English).pdf** | תוכן עיקרי לכל הפרקים — הרצאות, הגדרות, משפטים, דוגמאות |
 | **calculus1B-extended_formula_sheet.pdf** | [דף נוסחאות](formula_sheet.md) — העתקת נוסחאות לסיכום |
 | **calculus1B-recitations_1-13.pdf** | תרגולים 1–13 — דוגמאות ופתרונות לפי פרקים (ראה טבלה למטה) |
-| **calculus1B-HW_sol_2-11.pdf.pdf** | פתרונות תרגילים — ניתן להוסיף סעיף "תרגילים נבחרים" בפרקים או דף נפרד |
+| **calculus1B-HW_sol_2-11.pdf** | פתרונות תרגילים — ניתן להוסיף סעיף "תרגילים נבחרים" בפרקים או דף נפרד |
 | **Intro_work_-_Sol-1.pdf** | תרגילי מבוא — רלוונטי ל[פרק 9](chapters/chapter9.md) (פונקציות קדומות) |
 | **exams/** (מבחנים A, B, C, Sample) | תרגול למבחן — ניתן לדף "מבחנים" או דוגמאות בפרקים |
 | **mid_exams/** (Midterm, Midterm-Example) | מבחן אמצע — תרגול ורעיונות חוזרים |
